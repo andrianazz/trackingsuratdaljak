@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="/logodinas.png" style="width: 10%" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
 </head>
 
 <body class="bg">
@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-1">
-                                    <i class="bi bi-lock-fill text-dark" style="font-size: 26px;"></i>
+                                    <i class="bi bi-unlock-fill text-dark" style="font-size: 26px;"></i>
                                 </div>
                                 <div class="col-md-11">
                                     <input type="password" class="form-control" name="password" placeholder="Password" required>

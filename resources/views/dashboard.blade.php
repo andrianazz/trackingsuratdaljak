@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="shortcut icon" href="/logodinas.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
@@ -45,20 +45,26 @@
 
                         <li class="sidebar-item @yield('suratmasuk') ">
                             <a href="/suratmasuk" class='sidebar-link'>
-                                <i class="fa fa-folder-open"></i>
-                                <span>Data Surat Masuk</span>
+                                <i class="fa fa-home"></i>
+                                <span>Beranda</span>
                             </a>
                         </li>
                         <li class="sidebar-item @yield('datacuti') ">
                             <a href="/datacuti" class='sidebar-link'>
-                                <i class="fa fa-folder-open"></i>
-                                <span> Data Pengajuan Cuti</span>
+                                <i class="fa fa-file"></i>
+                                <span>Input Surat</span>
                             </a>
                         </li>
                         <li class="sidebar-item @yield('kelolacuti') ">
                             <a href="/kelolacuti" class='sidebar-link'>
                                 <i class="fa fa-clipboard-list"></i>
-                                <span>Kelola Data Cuti</span>
+                                <span>Disposisi Selesai</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item @yield('kelolacuti') ">
+                            <a href="/kelolacuti" class='sidebar-link'>
+                                <i class="fa fa-user"></i>
+                                <span>Kelola Pengguna</span>
                             </a>
                         </li>
 
@@ -79,7 +85,7 @@
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
                         <a style="float: right; cursor: pointer">
-                            <i class="fa fa-sign-out-alt" onclick="location.href='/keluar'"></i>
+                            <i class="fa fa-sign-out-alt" onclick="location.href='/logout'"></i>
                         </a>
                     </div>
                 </div>
@@ -92,7 +98,7 @@
                         <p>{{ \Carbon\Carbon::now()->year }} &copy; Dinas Pendidikan Provinsi Riau</p>
                     </div>
                     <div class="float-end">
-                        <p>Made with <span class="text-danger"></span> by <a></a>M. Saski</a></p>
+                        <p>Made with <span class="text-danger"></span> by <a></a>Andrian Wahyu</a></p>
                     </div>
                 </div>
             </footer>
