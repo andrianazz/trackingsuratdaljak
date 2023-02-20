@@ -14,7 +14,9 @@ class JenisSuratController extends Controller
      */
     public function index()
     {
-        return view("jenissurat.index");
+        $title = 'Jenis Surat';
+        $data = JenisSurat::all();
+        return view("jenissurat.index", compact(['data', 'title']));
     }
 
     /**
@@ -22,6 +24,7 @@ class JenisSuratController extends Controller
      */
     public function create()
     {
+
         //
     }
 
@@ -30,7 +33,8 @@ class JenisSuratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        JenisSurat::create($request->all());
+        return redirect()->route('jenissurat');
     }
 
     /**

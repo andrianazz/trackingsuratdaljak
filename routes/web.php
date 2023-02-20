@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BidangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\SubBidangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +30,13 @@ Route::group(['middleware' => 'auth'], function () {
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
 
-    //Pengguna
+    //Jenis Surat
     Route::get('/jenissurat', [JenisSuratController::class, 'index'])->name('jenissurat');
+    Route::post('/store/jenissurat', [JenisSuratController::class, 'store'])->name('store_jenissurat');
+
+    //Sub Bidang
+    Route::get('/subbidang', [SubBidangController::class, 'index'])->name('subbidang');
+
+    //Bidang
+    Route::get('/bidang', [BidangController::class, 'index'])->name('bidang');
 });

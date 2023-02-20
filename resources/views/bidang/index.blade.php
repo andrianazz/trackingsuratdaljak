@@ -7,16 +7,15 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Kelola Jenis Surat</h3>
+                        <h3 class="fw-bold">Kelola Bidang</h3>
                     </div>
                 </div>
                 <div class="row">
-                    <form action="/store/jenissurat" method="post">
-                        @csrf
+                    <form action="">
                         <div class="col-md-7">
                             <div class="form-group has-icon-left">
                                 <div class="position-relative">
-                                    <input type="text" name="jenis_surat" class="form-control" placeholder="Masukkan Jenis Surat.." id="first-name-icon">
+                                    <input type="text" class="form-control" placeholder="Masukkan Bidang.." id="first-name-icon">
                                     <div class="form-control-icon">
                                         <i class="fa fa-file"></i>
                                     </div>
@@ -52,18 +51,14 @@
                             <thead>
                                 <tr>
                                     <th data-sortable="" style="width: 5%;"><a href="#" class="dataTable-sorter">No.</a></th>
-                                    <th data-sortable="" style="width: 65%;"><a href="#" class="dataTable-sorter">Jenis Surat</a></th>
+                                    <th data-sortable="" style="width: 65%;"><a href="#" class="dataTable-sorter">Bidang</a></th>
                                     <th data-sortable="" style="width: 30%;"><a href="#" class="dataTable-sorter">Aksi</a></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
-                                $no = 1;
-                                @endphp
-                                @foreach ($data as $row )
                                 <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $row->jenis_surat }}</td>
+                                    <td>1</td>
+                                    <td>Sekretariat</td>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenisSurat">
                                             <i class="fa  fa-edit"></i>Ubah
@@ -73,9 +68,6 @@
                                         </button>
                                     </td>
                                 </tr>
-
-
-                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -101,29 +93,26 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel18">
-                    Hapus Jenis Surat
+                    Hapus Bidang
                 </h4>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                 </button>
             </div>
             <div class="modal-body">
-                Apakah Kamu yakin ingin menghapus Jenis Surat ini
+                Apakah Kamu yakin ingin menghapus Bidang ini
             </div>
-            <form action="/destroy/jenissurat/{{ $row->id }}" method="post">
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Tutup</span>
-                    </button>
-                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Hapus</span>
-                    </button>
-                </div>
-            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                    <i class="bx bx-x d-block d-sm-none"></i>
+                    <span class="d-none d-sm-block">Tutup</span>
+                </button>
+                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                    <i class="bx bx-check d-block d-sm-none"></i>
+                    <span class="d-none d-sm-block">Hapus</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
-
 @endsection

@@ -12,15 +12,16 @@ class BidangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
+        return view("bidang.index");
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,7 +29,7 @@ class BidangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +37,7 @@ class BidangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bidang $bidang): Response
+    public function show(Bidang $bidang)
     {
         //
     }
@@ -44,7 +45,7 @@ class BidangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bidang $bidang): Response
+    public function edit(Bidang $bidang)
     {
         //
     }
@@ -52,7 +53,7 @@ class BidangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Bidang $bidang): RedirectResponse
+    public function update(Request $request, Bidang $bidang)
     {
         //
     }
@@ -60,7 +61,7 @@ class BidangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bidang $bidang): RedirectResponse
+    public function destroy(Bidang $bidang)
     {
         //
     }

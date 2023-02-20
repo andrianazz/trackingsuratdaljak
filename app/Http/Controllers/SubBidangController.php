@@ -12,15 +12,16 @@ class SubBidangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
+        return view("subbidang.index");
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,7 +29,7 @@ class SubBidangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +37,7 @@ class SubBidangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SubBidang $subBidang): Response
+    public function show(SubBidang $subBidang)
     {
         //
     }
@@ -44,7 +45,7 @@ class SubBidangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubBidang $subBidang): Response
+    public function edit(SubBidang $subBidang)
     {
         //
     }
@@ -52,7 +53,7 @@ class SubBidangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SubBidang $subBidang): RedirectResponse
+    public function update(Request $request, SubBidang $subBidang)
     {
         //
     }
@@ -60,7 +61,7 @@ class SubBidangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SubBidang $subBidang): RedirectResponse
+    public function destroy(SubBidang $subBidang)
     {
         //
     }

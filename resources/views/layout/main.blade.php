@@ -69,13 +69,10 @@
                             </a>
                             <ul class="submenu" style="display: none;">
                                 <li class="submenu-item">
-                                    <a href="#">Bidang</a>
+                                    <a href="/bidang">Bidang</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="#">Sub Bidang</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="#">Sub Bidang</a>
+                                    <a href="/subbidang">Sub Bidang</a>
                                 </li>
                                 <li class="submenu-item">
                                     <a href="/jenissurat">Jenis Surat</a>
