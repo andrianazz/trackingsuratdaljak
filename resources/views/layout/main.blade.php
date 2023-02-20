@@ -12,8 +12,13 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     @stack('css')
+     <link
+      rel="stylesheet"
+      href="assets/extensions/simple-datatables/style.css"
+    />
+    <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
 
-    <link rel="stylesheet" href="/assets/css/main/app.css">
+    <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
 
 
@@ -140,7 +145,9 @@
 
     @stack('js')
 
-    <script src="/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="assets/js/pages/simple-datatables.js"></script>
 </body>
 
 </html>
