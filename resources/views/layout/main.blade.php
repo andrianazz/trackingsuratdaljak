@@ -8,18 +8,13 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
-    <link rel="stylesheet" href="/assets/vendors/iconly/bold.css">
-    <link rel="stylesheet" href="/assets/vendors/fontawesome/all.min.css">
-    <link rel="stylesheet" href="/assets/vendors/toastify/toastify.css">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     @stack('css')
 
-    <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -98,7 +93,7 @@
                 </a>
             </header>
 
-            <div class="page-heading">
+            <div class="">
                 <div class="card">
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
@@ -120,11 +115,6 @@
             </footer>
         </div>
     </div>
-    <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="/assets/vendors/toastify/toastify.js"></script>
 
     @if (session('sukses'))
     <script>
@@ -150,8 +140,7 @@
 
     @stack('js')
 
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/vendors/fontawesome/all.min.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>
