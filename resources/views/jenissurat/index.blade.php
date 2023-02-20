@@ -45,11 +45,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @php
-                            $no = 1;
-                            @endphp
-                            @foreach ($data as $row )
+                        @php
+                        $no = 1;
+                        @endphp
+                        @foreach ($data as $row )
                         <tr>
                             <td>{{ $no++}}</td>
                             <td>{{ $row->jenis_surat }}</td>
@@ -63,7 +62,7 @@
                             </td>
                         </tr>
                         @endforeach
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
