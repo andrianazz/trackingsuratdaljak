@@ -61,11 +61,29 @@
                                 <span>Disposisi Selesai</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="/kelolacuti" class='sidebar-link'>
-                                <i class="fa fa-user"></i>
-                                <span>Kelola Pengguna</span>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class="sidebar-link">
+                                <i class="bi bi-stack"></i>
+                                <span>Data Master</span>
                             </a>
+                            <ul class="submenu" style="display: none;">
+                                <li class="submenu-item">
+                                    <a href="#">Bidang</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="#">Sub Bidang</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="#">Sub Bidang</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="#">Jenis Surat</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="/pengguna">Pengguna</a>
+                                </li>
+
+                            </ul>
                         </li>
 
                     </ul>
@@ -94,9 +112,9 @@
 
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
-                    <!-- <div class="float-end">
+                    <div class="float-end">
                         <p>{{ \Carbon\Carbon::now()->year }} &copy; Badan Pendapatan Daerah</p>
-                    </div> -->
+                    </div>
 
                 </div>
             </footer>
