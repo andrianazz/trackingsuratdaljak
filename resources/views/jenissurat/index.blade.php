@@ -7,13 +7,31 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Kelola Pengguna</h3>
+                        <h3 class="fw-bold">Kelola Jenis Surat</h3>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#large">
-                            <i class="fa  fa-plus"></i>Tambah Data
-                        </button>
-                    </div>
+                </div>
+                <div class="row">
+                    <form action="">
+                        <div class="col-md-7">
+                            <div class="form-group has-icon-left">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" placeholder="Masukkan Jenis Surat.." id="first-name-icon">
+                                    <div class="form-control-icon">
+                                        <i class="fa fa-file"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="reset" class="btn btn-light-secondary mb-1">
+                                Reset
+                            </button>
+                            <button type="submit" class="btn btn-success mb-1">
+                                Tambahkan
+                            </button>
+
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="card-body">
@@ -33,18 +51,14 @@
                             <thead>
                                 <tr>
                                     <th data-sortable="" style="width: 5%;"><a href="#" class="dataTable-sorter">No.</a></th>
-                                    <th data-sortable="" style="width: 20%;"><a href="#" class="dataTable-sorter">Username</a></th>
-                                    <th data-sortable="" style="width: 10%;"><a href="#" class="dataTable-sorter">Role</a></th>
-                                    <th data-sortable="" style="width: 35%;"><a href="#" class="dataTable-sorter">Nama Pengguna</a></th>
+                                    <th data-sortable="" style="width: 65%;"><a href="#" class="dataTable-sorter">Jenis Surat</a></th>
                                     <th data-sortable="" style="width: 30%;"><a href="#" class="dataTable-sorter">Aksi</a></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>andrianazz</td>
-                                    <td>admin</td>
-                                    <td>Andrian Wahyu</td>
+                                    <td>Pembetulan PBB</td>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
                                             <i class="fa  fa-edit"></i>Ubah
@@ -56,9 +70,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>saskiazz</td>
-                                    <td>user</td>
-                                    <td>Muhammad Saski</td>
+                                    <td>Pengurangan PBB</td>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
                                             <i class="fa  fa-edit"></i>Ubah
@@ -88,88 +100,19 @@
     </section>
 </div>
 
-<div class="modal fade text-left" id="large" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel17">
-                    TAMBAH PENGGUNA
-                </h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <form action="">
-                <div class="modal-body">
-
-
-
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-6">
-                            ID Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan ID Pegawai...">
-                        </div>
-                        <div class="col-md-6 ">
-                            Nama Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Nama Pegawai...">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-6">
-                            Email Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Email Pegawai...">
-                        </div>
-                        <div class="col-md-6 ">
-                            Username<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Username...">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-6">
-                            Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Password...">
-                        </div>
-                        <div class="col-md-6">
-                            Konfirmasi Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Konfirmasi Password...">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-2">Role</div>
-                        <div class="col-md-10">
-                            <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan role...">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="reset" class="btn btn-light-secondary">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Reset</span>
-                    </button>
-                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Accept</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade text-left" id="hapusPengguna" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+<div class="modal fade text-left" id="hapusSurat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel18">
-                    Hapus Pengguna
+                    Hapus Jenis Surat
                 </h4>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                 </button>
             </div>
             <div class="modal-body">
-                Apakah Kamu yakin ingin menghapus pengguna ini
+                Apakah Kamu yakin ingin menghapus Jenis Surat ini
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -184,5 +127,4 @@
         </div>
     </div>
 </div>
-
 @endsection

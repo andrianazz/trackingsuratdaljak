@@ -12,15 +12,15 @@ class JenisSuratController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
-        //
+        return view("jenissurat.index");
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,7 +28,7 @@ class JenisSuratController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class JenisSuratController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(JenisSurat $jenisSurat): Response
+    public function show(JenisSurat $jenisSurat)
     {
         //
     }
@@ -44,7 +44,7 @@ class JenisSuratController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(JenisSurat $jenisSurat): Response
+    public function edit(JenisSurat $jenisSurat)
     {
         //
     }
@@ -52,7 +52,7 @@ class JenisSuratController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, JenisSurat $jenisSurat): RedirectResponse
+    public function update(Request $request, JenisSurat $jenisSurat)
     {
         //
     }
@@ -60,7 +60,7 @@ class JenisSuratController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JenisSurat $jenisSurat): RedirectResponse
+    public function destroy(JenisSurat $jenisSurat)
     {
         //
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
+
+    //Pengguna
+    Route::get('/jenissurat', [JenisSuratController::class, 'index'])->name('jenissurat');
 });
