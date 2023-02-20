@@ -99,56 +99,59 @@
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">ID Pegawai</div>
-                    <div class="col-md-10 ">
-                        <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan ID Pegawai">
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">Nama Pegawai</div>
-                    <div class="col-md-10 ">
-                        <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Nama Pegawai">
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">Email Pegawai</div>
-                    <div class="col-md-10">
-                        <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Email Pegawai">
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">Username</div>
-                    <div class="col-md-10">
-                        <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Username">
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">Password</div>
-                    <div class="col-md-10">
-                        <input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Password">
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    <div class="col-md-2">Konfirmasi Password</div>
-                    <div class="col-md-10">
-                        <input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Konfirmasi Password">
-                    </div>
-                </div>
+            <form action="">
+                <div class="modal-body">
 
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                    <i class="bx bx-x d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Close</span>
-                </button>
-                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                    <i class="bx bx-check d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Accept</span>
-                </button>
-            </div>
+
+                    <div class="row justify-content-center mb-2">
+                        <div class="col-md-6">
+                            ID Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan ID Pegawai...">
+                        </div>
+                        <div class="col-md-6 ">
+                            Nama Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Nama Pegawai...">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-2">
+                        <div class="col-md-6">
+                            Email Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Email Pegawai...">
+                        </div>
+                        <div class="col-md-6 ">
+                            Username<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Username...">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-2">
+                        <div class="col-md-6">
+                            Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Password...">
+                        </div>
+                        <div class="col-md-6">
+                            Konfirmasi Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Konfirmasi Password...">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-2">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-2">
+                        <div class="col-md-2">Role</div>
+                        <div class="col-md-10">
+                            <input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan role...">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-light-secondary">
+                        <i class="bx bx-x d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Reset</span>
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        <i class="bx bx-check d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Accept</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
