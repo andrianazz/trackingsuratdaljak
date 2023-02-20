@@ -36,61 +36,36 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                    <div class="dataTable-top">
-                        <div class="dataTable-dropdown"><select class="dataTable-selector form-select">
-                                <option value="5">5</option>
-                                <option value="10" selected="">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                            </select><label> entries per page</label></div>
-                        <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div>
-                    </div>
-                    <div class="dataTable-container">
-                        <table class="table table-striped dataTable-table" id="table1">
-                            <thead>
-                                <tr>
-                                    <th data-sortable="" style="width: 5%;"><a href="#" class="dataTable-sorter">No.</a></th>
-                                    <th data-sortable="" style="width: 65%;"><a href="#" class="dataTable-sorter">Jenis Surat</a></th>
-                                    <th data-sortable="" style="width: 30%;"><a href="#" class="dataTable-sorter">Aksi</a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php
-                                $no = 1;
-                                @endphp
-                                @foreach ($data as $row )
-                                <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $row->jenis_surat }}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenisSurat">
-                                            <i class="fa  fa-edit"></i>Ubah
-                                        </button>
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusJenisSurat">
-                                            <i class="fa  fa-trash"></i>Hapus
-                                        </button>
-                                    </td>
-                                </tr>
-
-
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="dataTable-bottom">
-                        <div class="dataTable-info">Showing 1 to 10 of 26 entries</div>
-                        <nav class="dataTable-pagination">
-                            <ul class="dataTable-pagination-list pagination pagination-primary">
-                                <li class="active page-item"><a href="#" data-page="1" class="page-link">1</a></li>
-                                <li class="page-item"><a href="#" data-page="2" class="page-link">2</a></li>
-                                <li class="page-item"><a href="#" data-page="3" class="page-link">3</a></li>
-                                <li class="pager page-item"><a href="#" data-page="2" class="page-link">›</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>No. </th>
+                            <th>Jenis Surat</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @php
+                            $no = 1;
+                            @endphp
+                            @foreach ($data as $row )
+                        <tr>
+                            <td>{{ $no++}}</td>
+                            <td>{{ $row->jenis_surat }}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenisSurat">
+                                    <i class="fa  fa-edit"></i>Ubah
+                                </button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusJenisSurat">
+                                    <i class="fa  fa-trash"></i>Hapus
+                                </button>
+                            </td>
+                        </tr>
+                        @endforeach
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
