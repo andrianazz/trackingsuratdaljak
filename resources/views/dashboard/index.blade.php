@@ -222,9 +222,9 @@
 @endsection
 
 @push('css')
-<link rel="stylesheet" href="/assets/vendors/simple-datatables/style.css">
+<!-- <link rel="stylesheet" href="/assets/css/pages/simple-datatables.css"> -->
 @endpush
 
 @push('js')
-<script src="/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<!-- <script src="/assets/js/pages/simple-datatables.js"></script> -->
 @endpush
