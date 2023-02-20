@@ -64,8 +64,12 @@ class JenisSuratController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JenisSurat $jenisSurat)
+    public function destroy($id)
     {
         //
+        $data = JenisSurat::find($id);
+        $data->delete();
+
+        return redirect()->route('jenissurat');
     }
 }

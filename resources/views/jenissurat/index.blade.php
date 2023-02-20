@@ -18,7 +18,7 @@
                                 <div class="position-relative">
                                     <input type="text" name="jenis_surat" class="form-control" placeholder="Masukkan Jenis Surat.." id="first-name-icon">
                                     <div class="form-control-icon">
-                                        <i class="fa fa-file"></i>
+                                        <i class="bi bi-file-earmark-text-fill"></i>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusJenisSurat">
-                                    <i class="fa  fa-trash"></i>Hapus
+                                    <i class="fa  fa-edit"></i>Hapus
                                 </button>
                             </td>
                         </tr>
@@ -99,5 +99,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

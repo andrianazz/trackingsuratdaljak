@@ -15,7 +15,9 @@ class BidangController extends Controller
     public function index()
     {
         //
-        return view("bidang.index");
+        $title = 'Bidang';
+        $data = Bidang::all();
+        return view("bidang.index", compact(['title', 'data']));
     }
 
     /**
@@ -32,6 +34,8 @@ class BidangController extends Controller
     public function store(Request $request)
     {
         //
+        Bidang::create($request->all());
+        return redirect()->route('bidang');
     }
 
     /**
@@ -61,8 +65,12 @@ class BidangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bidang $bidang)
+    public function destroy($id)
     {
         //
+        $data = Bidang::find($id);
+        $data->delete();
+
+        return redirect()->route('bidang');
     }
 }
