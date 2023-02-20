@@ -66,7 +66,6 @@ class JenisSuratController extends Controller
      */
     public function destroy($id)
     {
-        //
         $data = JenisSurat::find($id);
         $data->delete();
 
