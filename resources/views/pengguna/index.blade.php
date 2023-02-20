@@ -24,66 +24,30 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                    <div class="dataTable-top">
-                        <div class="dataTable-dropdown"><select class="dataTable-selector form-select">
-                                <option value="5">5</option>
-                                <option value="10" selected="">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                            </select><label> entries per page</label></div>
-                        <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div>
-                    </div>
-                    <div class="dataTable-container">
-                        <table class="table table-striped dataTable-table" id="table1">
-                            <thead>
-                                <tr>
-                                    <th data-sortable="" style="width: 5%;"><a href="#" class="dataTable-sorter">Nomor</a></th>
-                                    <th data-sortable="" style="width: 20%;"><a href="#" class="dataTable-sorter">Username</a></th>
-                                    <th data-sortable="" style="width: 10%;"><a href="#" class="dataTable-sorter">Role</a></th>
-                                    <th data-sortable="" style="width: 35%;"><a href="#" class="dataTable-sorter">Nama Pengguna</a></th>
-                                    <th data-sortable="" style="width: 30%;"><a href="#" class="dataTable-sorter">Aksi</a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>andrianazz</td>
-                                    <td>admin</td>
-                                    <td>Andrian Wahyu</td>
-                                    <td>
-                                        <a href="#" class="btn icon icon-left btn-primary"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="#" class="btn icon icon-left btn-danger"><i class="fa fa-trash"></i>Hapus</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>saskiazz</td>
-                                    <td>user</td>
-                                    <td>Muhammad Saski</td>
-                                    <td>
-                                        <a href="#" class="btn icon icon-left btn-primary"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="#" class="btn icon icon-left btn-danger"><i class="fa fa-trash"></i>Hapus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="dataTable-bottom">
-                        <div class="dataTable-info">Showing 1 to 10 of 26 entries</div>
-                        <nav class="dataTable-pagination">
-                            <ul class="dataTable-pagination-list pagination pagination-primary">
-                                <li class="active page-item"><a href="#" data-page="1" class="page-link">1</a></li>
-                                <li class="page-item"><a href="#" data-page="2" class="page-link">2</a></li>
-                                <li class="page-item"><a href="#" data-page="3" class="page-link">3</a></li>
-                                <li class="pager page-item"><a href="#" data-page="2" class="page-link">›</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+              <div class="card-body">
+                <table class="table table-striped" id="table1">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>City</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Graiden</td>
+                      <td>vehicula.aliquet@semconsequat.co.uk</td>
+                      <td>076 4820 8838</td>
+                      <td>Offenburg</td>
+                      <td>
+                        <span class="badge bg-success">Active</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
         </div>
     </section>
 </div>
@@ -106,26 +70,26 @@
 
                     <div class="row justify-content-center mb-2">
                         <div class="col-md-6">
-                            ID Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan ID Pegawai...">
+                            ID Pegawai<input type="text" id="id" class="form-control" name="" placeholder="Masukkan ID Pegawai...">
                         </div>
                         <div class="col-md-6 ">
-                            Nama Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Nama Pegawai...">
+                            Nama Pegawai<input type="text" id="nama" class="form-control" name="" placeholder="Masukkan Nama Pegawai...">
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
                         <div class="col-md-6">
-                            Email Pegawai<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Email Pegawai...">
+                            Email Pegawai<input type="text" id="email" class="form-control" name="" placeholder="Masukkan Email Pegawai...">
                         </div>
                         <div class="col-md-6 ">
-                            Username<input type="text" id="first-name" class="form-control" name="" placeholder="Masukkan Username...">
+                            Username<input type="text" id="username" class="form-control" name="" placeholder="Masukkan Username...">
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
                         <div class="col-md-6">
-                            Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Password...">
+                            Password<input type="password" id="password" class="form-control" name="" placeholder="Masukkan Password...">
                         </div>
                         <div class="col-md-6">
-                            Konfirmasi Password<input type="password" id="first-name" class="form-control" name="" placeholder="Masukkan Konfirmasi Password...">
+                            Konfirmasi Password<input type="password" id="password-confirm" class="form-control" name="" placeholder="Masukkan Konfirmasi Password...">
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
