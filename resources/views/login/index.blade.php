@@ -8,10 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main/app.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="shortcut icon" href="/assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
 </head>
 
@@ -55,7 +54,7 @@
                         @endif
 
                         <div class="form-group mt-4">
-                            <button type="submit" class="btn btn-block fw-bold text-dark text-uppercase" style="background-color: #3594BC;">Login</button>
+                            <button type="submit" class="btn btn-block fw-bold text-white text-uppercase" style="background-color: #3594BC;">Login</button>
                         </div>
                     </form>
 
