@@ -1,6 +1,6 @@
 @extends('layout.main')
-
 @section('content')
+
 <div class="page-heading">
     <section class="section">
         <div class="card">
@@ -41,8 +41,8 @@
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>{{ $row->bidang->nama_bidang }}</td>
                             <td>{{ $row->nama_pemohon }}</td>
-                            <td>{{ $row->jenis_surat->jenis_surat }}</td>
-                            <td>{{ $row->subbidang->nama_sub_bidang }}</td>
+                            <td>{{ $row->jenisSurat->jenis_surat }}</td>
+                            <td>{{ $row->subBidang->nama_sub_bidang }}</td>
                             <td class="text-end">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPengguna">
                                     <i class="fa  fa-edit"></i>Ubah
@@ -76,10 +76,18 @@
                 <div class="modal-body">
                     <div class="row justify-content-center align-items-center mb-2">
                         <div class="col-md-3">
+                            No
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="no" value="{{ $no }}" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center mb-2">
+                        <div class="col-md-3">
                             Indeks Surat
                         </div>
                         <div class="col-md-9">
-                            <input type="text" id="indeks_surat" class="form-control" name="nama_user" placeholder="Masukkan Nama Pegawai...">
+                            <input type="text" name="indeks_surat" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pegawai..." required>
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
@@ -87,39 +95,40 @@
                             Tanggal Masuk
                         </div>
                         <div class="col-md-9">
-                            <input type="date" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" name="date" required>
+                            <input type="date" name="tgl_masuk" value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" required>
                         </div>
                     </div>
-                    <div class="row justify-content-center mb-2">
+                    <div class="row justify-content-center ">
                         <div class="col-md-3">
                             Disposisi Dari
                         </div>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <select class="choices form-select" name="bidang_id">
+                                <select class="choices form-select" name="bidang_id" required>
+                                    <option value="">Pilih Bidang</option>
                                     @foreach ($bidang as $row)
                                     <option value="{{ $row->id }}">{{ $row->nama_bidang }}</option>
-
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center mb-2">
+                    <div class="row justify-content-center mb-3">
                         <div class="col-md-3">
                             Nama Pemohon
                         </div>
                         <div class="col-md-9">
-                            <input type="text" id="indeks_surat" class="form-control" name="nama_user" placeholder="Masukkan Nama Pegawai...">
+                            <input type="text" name="nama_pemohon" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pegawai..." required>
                         </div>
                     </div>
-                    <div class="row justify-content-center mb-2">
+                    <div class="row justify-content-center">
                         <div class="col-md-3">
                             Jenis Surat
                         </div>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <select class="choices form-select" name="jenis_surat_id">
+                                <select class="choices form-select" name="jenis_surat_id" required>
+                                    <option value="">Pilih Jenis Surat</option>
                                     @foreach ($jenisSurat as $row)
                                     <option value="{{ $row->id }}">{{ $row->jenis_surat }}</option>
                                     @endforeach
@@ -127,13 +136,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center mb-2">
+                    <div class="row justify-content-center">
                         <div class="col-md-3">
                             Disposisi Ke
                         </div>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <select class="choices form-select" name="sub_bidang_id">
+                                <select class="choices form-select" name="sub_bidang_id" required>
+                                    <option value="">Pilih Sub Bidang</option>
                                     @foreach ($subBidang as $row)
                                     <option value="{{ $row->id }}">{{ $row->nama_sub_bidang }}</option>
                                     @endforeach

@@ -40,7 +40,21 @@ class SuratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Surat::create(
+            [
+                'no' => $request->no,
+                'indeks_surat' => $request->indeks_surat,
+                'tgl_masuk' => $request->tgl_masuk,
+                'bidang_id' => $request->bidang_id,
+                'nama_pemohon' => $request->nama_pemohon,
+                'jenis_surat_id' => $request->jenis_surat_id,
+                'sub_bidang_id' => $request->sub_bidang_id,
+                'status_surat' => 0,
+                'catatan' => '',
+            ]
+        );
+        return redirect()->route('input-surat');
     }
 
     /**

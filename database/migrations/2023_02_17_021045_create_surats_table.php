@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId("sub_bidang_id");
             $table->timestamp("tgl_selesai")->nullable();
             $table->integer("status_surat");
-            $table->string("catatan");
+            $table->string("catatan")->nullable();
             $table->timestamps();
         });
     }

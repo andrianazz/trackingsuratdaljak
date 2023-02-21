@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Input Surat
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');
+    Route::post('/input-surat/store', [SuratController::class, 'store'])->name('input-surat-store');
 
 
     //Pengguna
