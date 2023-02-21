@@ -89,7 +89,7 @@
                             Password<input type="password" id="password" class="form-control" name="password" placeholder="Masukkan Password...">
                         </div>
                         <div class="col-md-6">
-                            Konfirmasi Password<input type="password" id="password-confirm" class="form-control" name="" placeholder="Masukkan Konfirmasi Password...">
+                            Konfirmasi Password<input type="password" id="password-confirm" class="form-control" name="password2" placeholder="Masukkan Konfirmasi Password...">
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
@@ -101,7 +101,7 @@
                         <div class="col-md-2">Role</div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <select class="choices form-select">
+                                <select class="choices form-select" name="role">
                                     <option value="kabid">Kepala Bidang</option>
                                     <option value="adminbidang">Admin Bidang</option>
                                     @foreach ($subbid as $row )
