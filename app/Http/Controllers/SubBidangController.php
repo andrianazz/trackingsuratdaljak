@@ -59,7 +59,9 @@ class SubBidangController extends Controller
      */
     public function update(Request $request, SubBidang $subBidang)
     {
-        //
+        SubBidang::where('id', $request->id)
+            ->update(['nama_sub_bidang' => $request->nama_sub_bidang]);
+        return redirect()->route('sub-bidang');
     }
 
     /**
