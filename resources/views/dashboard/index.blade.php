@@ -20,7 +20,6 @@
                                     <br>
                                     <div class="form-group text-center">
                                         <div class="row">
-
                                             <div class="col-md-8">
                                                 <input type="text" class="form-control" name="" placeholder="Masukkan Nama Pemohon / Nomor Surat" required>
                                             </div>

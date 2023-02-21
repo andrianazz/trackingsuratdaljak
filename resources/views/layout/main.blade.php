@@ -40,27 +40,27 @@
 
                         <div style="margin-top: 50px;"></div>
 
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item ">
                             <a href="/" class='sidebar-link'>
-                                <i class="fa fa-home"></i>
+                                <i class="bi bi-house-door-fill"></i>
                                 <span>Beranda</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/datacuti" class='sidebar-link'>
-                                <i class="fa fa-file"></i>
+                            <a href="/" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-richtext-fill"></i>
                                 <span>Input Surat</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/kelolacuti" class='sidebar-link'>
-                                <i class="fa fa-clipboard-list"></i>
+                            <a href="/" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
                                 <span>Disposisi Selesai</span>
                             </a>
                         </li>
                         <li class="sidebar-item has-sub">
                             <a href="#" class="sidebar-link">
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-stack "></i>
                                 <span>Data Master</span>
                             </a>
                             <ul class="submenu" style="display: none;">
@@ -73,7 +73,7 @@
                                 <li class="submenu-item">
                                     <a href="/jenis-surat">Jenis Surat</a>
                                 </li>
-                                <li class="submenu-item">
+                                <li class="submenu-item  ">
                                     <a href="/pengguna">Pengguna</a>
                                 </li>
 
@@ -97,7 +97,7 @@
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
                         <a style="float: right; cursor: pointer">
-                            <i class="fa fa-sign-out-alt" onclick="location.href='/logout'"></i>
+                            <i class="bi bi-box-arrow-right" onclick="location.href='/logout'"></i>
                         </a>
                     </div>
                 </div>

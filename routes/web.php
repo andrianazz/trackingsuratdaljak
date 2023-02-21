@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
+    Route::post('/pengguna/store', [PenggunaController::class, 'store'])->name('pengguna-store');
 
     //Jenis Surat
     Route::get('/jenis-surat', [JenisSuratController::class, 'index'])->name('jenis-surat');
@@ -37,8 +38,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Sub Bidang
     Route::get('/sub-bidang', [SubBidangController::class, 'index'])->name('sub-bidang');
+    Route::post('/sub-bidang/store', [SubBidangController::class, 'store'])->name('sub-bidang-store');
+    Route::delete('/sub-bidang/destroy/{id}', [SubBidangController::class, 'destroy'])->name('sub-bidang-destroy');
 
     //Bidang
     Route::get('/bidang', [BidangController::class, 'index'])->name('bidang');
-    Route::post('/store/bidang', [BidangController::class, 'store'])->name('bidang-store');
+    Route::post('/bidang/store', [BidangController::class, 'store'])->name('bidang-store');
+    Route::delete('/bidang/destroy/{id}', [BidangController::class, 'destroy'])->name('bidang-destroy');
 });

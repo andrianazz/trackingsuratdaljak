@@ -12,7 +12,7 @@ class SuratController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
     }
@@ -20,7 +20,7 @@ class SuratController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,7 +28,7 @@ class SuratController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class SuratController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Surat $surat): Response
+    public function show(Surat $surat)
     {
         //
     }
@@ -44,7 +44,7 @@ class SuratController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Surat $surat): Response
+    public function edit(Surat $surat)
     {
         //
     }
@@ -52,7 +52,7 @@ class SuratController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Surat $surat): RedirectResponse
+    public function update(Request $request, Surat $surat)
     {
         //
     }
@@ -60,7 +60,7 @@ class SuratController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Surat $surat): RedirectResponse
+    public function destroy(Surat $surat)
     {
         //
     }

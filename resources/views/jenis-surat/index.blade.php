@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="/store/jenissurat" method="post">
+                    <form action="/store/jenis-surat" method="post">
                         @csrf
                         <div class="col-md-7">
                             <div class="form-group has-icon-left">
