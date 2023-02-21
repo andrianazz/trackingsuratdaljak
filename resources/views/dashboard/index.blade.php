@@ -39,16 +39,16 @@
 
                 @foreach($data as $row)
                 <div class="card mb-3 p-3">
-                    <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Surat</span><span class="text-medium"> {{ $row->indeks_surat }}</span></div>
-                    <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2 bg-secondary">
+                    <div class="p-4 text-center text-white text-lg rounded-top" style="background-color: #435ebe"><span class="text-uppercase">Tracking Surat</span><span class="text-medium"> {{ $row->indeks_surat }}</span></div>
+                    <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2" style="background-color: #374250">
                         <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Nama Pemohon:</span> {{$row->nama_pemohon}}</div>
                         <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Disposisi dari:</span> {{ $row->bidang->nama_bidang }}</div>
                         <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Disposisi ke:</span> {{ $row->subBidang->nama_sub_bidang }}</div>
                         <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Tanggal Masuk:</span> {{ $row->tgl_masuk }} </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-body">
-                            <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
+                        <div class="card-body pb-0 px-0 mb-0 mx-0">
+                            <div class="mb-0 pb-0 steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
                                 <div class="step {{ $row->status_surat >= 1  ? 'completed': '' }} ">
                                     <div class="step-icon-wrap">
                                         <div class="step-icon"><i class="bi bi-laptop"></i></div>
