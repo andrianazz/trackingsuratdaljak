@@ -80,7 +80,7 @@
                             Indeks Surat
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="indeks_surat" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pegawai..." required>
+                            <input type="text" name="indeks_surat" id="indeks_surat" class="form-control" placeholder="Masukkan Indeks Surat..." required>
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">
@@ -88,7 +88,7 @@
                             Tanggal Masuk
                         </div>
                         <div class="col-md-9">
-                            <input type="date" name="tgl_masuk" value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" required>
+                            <input type="datetime-local" name="tgl_masuk" value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" required>
                         </div>
                     </div>
                     <div class="row justify-content-center ">
@@ -111,7 +111,7 @@
                             Nama Pemohon
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="nama_pemohon" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pegawai..." required>
+                            <input type="text" name="nama_pemohon" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pemohon..." required>
                         </div>
                     </div>
                     <div class="row justify-content-center">
