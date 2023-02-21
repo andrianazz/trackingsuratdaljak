@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Disposisi Selesai</h3>
+                        <h3 class="fw-bold">Surat Selesai</h3>
                     </div>
                 </div>
             </div>
@@ -16,8 +16,8 @@
                     <thead>
                         <tr>
                             <th>No. </th>
-                            <th>Nama Pemohon</th>
                             <th>Bidang</th>
+                            <th>Nama Pemohon</th>
                             <th>Jenis Surat</th>
                             <th>Tanggal Masuk</th>
                             <th>Tanggal Selesai</th>
@@ -31,8 +31,8 @@
                         @foreach ($data as $row )
                         <tr>
                             <td>{{ $no++}}</td>
-                            <td>{{ $row->nama_pemohon }}</td>
                             <td>{{ $row->bidang->nama_bidang }}</td>
+                            <td>{{ $row->nama_pemohon }}</td>
                             <td>{{ $row->jenisSurat->jenis_surat }}</td>
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>{{ $row->tgl_selesai }}</td>

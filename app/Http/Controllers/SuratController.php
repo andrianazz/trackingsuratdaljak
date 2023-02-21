@@ -34,6 +34,54 @@ class SuratController extends Controller
         return view('disposisi-selesai.index', compact(['title', 'data']));
     }
 
+    public function disposisiSurat()
+    {
+        $title = "Disposisi Surat";
+        $data = Surat::where('status_surat', 1)->get();
+        return view('disposisi-surat.index', compact(['title', 'data']));
+    }
+
+    public function disposisiSuratUpdate(Request $request, $id)
+    {
+        Surat::where('id', $id)->update([
+            'status_surat' => 2,
+            'catatan' => $request->catatan,
+        ]);
+        return redirect()->route('disposisi-surat');
+    }
+
+    public function disposisiSuratSubbid()
+    {
+        $title = "Disposisi Surat Kasubid";
+        $data = Surat::where('status_surat', 2)->get();
+        return view('disposisi-surat-subbid.index', compact(['title', 'data']));
+    }
+
+    public function disposisiSuratSubbidUpdate(Request $request, $id)
+    {
+        Surat::where('id', $id)->update([
+            'status_surat' => 4,
+        ]);
+        return redirect()->route('disposisi-surat-subbid');
+    }
+
+    public function suratSelesaiSubbid()
+    {
+        $title = "Surat Selesai Subbid";
+        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 5)->get();
+        return view('surat-selesai-subbid.index', compact(['title', 'data']));
+    }
+
+    public function suratSelesaiSubbidUpdate(Request $request, $id)
+    {
+
+        Surat::where('id', $id)->update([
+            'status_surat' => 5,
+            'tgl_selesai' => $request->tgl_selesai,
+        ]);
+        return redirect()->route('surat-selesai-subbid');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -56,7 +104,7 @@ class SuratController extends Controller
                 'nama_pemohon' => $request->nama_pemohon,
                 'jenis_surat_id' => $request->jenis_surat_id,
                 'sub_bidang_id' => $request->sub_bidang_id,
-                'status_surat' => 0,
+                'status_surat' => 1,
                 'catatan' => '',
             ]
         );

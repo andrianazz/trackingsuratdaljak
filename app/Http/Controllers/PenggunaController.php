@@ -27,7 +27,7 @@ class PenggunaController extends Controller
                 'nama_user' => $request->nama_user,
                 'email_user' => $request->email_user,
                 'username' => $request->username,
-                'password' => $request->password,
+                'password' => Hash::make($request->password),
                 'role' => $request->role,
             ]);
 

@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Disposisi Selesai</h3>
+                        <h3 class="fw-bold">Surat Selesai Subbid</h3>
                     </div>
                 </div>
             </div>
@@ -16,11 +16,12 @@
                     <thead>
                         <tr>
                             <th>No. </th>
-                            <th>Nama Pemohon</th>
                             <th>Bidang</th>
+                            <th>Nama Pemohon</th>
                             <th>Jenis Surat</th>
                             <th>Tanggal Masuk</th>
                             <th>Tanggal Selesai</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,11 +32,26 @@
                         @foreach ($data as $row )
                         <tr>
                             <td>{{ $no++}}</td>
-                            <td>{{ $row->nama_pemohon }}</td>
                             <td>{{ $row->bidang->nama_bidang }}</td>
+                            <td>{{ $row->nama_pemohon }}</td>
                             <td>{{ $row->jenisSurat->jenis_surat }}</td>
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>{{ $row->tgl_selesai }}</td>
+                            <td>
+                                @if($row->status_surat ==4)
+                                <form action="/surat-selesai-subbid/{{ $row->id }}" method="post">
+                                    @method('PUT')
+                                    @csrf
+                                    <input type="date" value="{{ date('Y-m-d') }}" name="tgl_selesai" hidden>
+                                    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
+                                        <i class="fa  fa-edit"></i>Verifikasi
+                                    </button>
+                                </form>
+                                @endif
+                                @if($row->status_surat ==5)
+                                Selesai
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
