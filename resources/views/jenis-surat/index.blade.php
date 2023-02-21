@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="/store/jenis-surat" method="post">
+                    <form action="/jenis-surat/store" method="post">
                         @csrf
                         <div class="col-md-7">
                             <div class="form-group has-icon-left">
@@ -59,6 +59,37 @@
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusJenisSurat">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
+                                <div class="modal fade text-left" id="hapusJenisSurat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel18">
+                                                    Hapus Jenis Surat
+                                                </h4>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Apakah anda yakin ingin menghapus jenis surat ini?
+                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Tutup</span>
+                                                    </button>
+                                                    <form action="/jenis-surat/destroy/{{ $row->id }}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Hapus</span>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
@@ -70,35 +101,7 @@
     </section>
 </div>
 
-<div class="modal fade text-left" id="hapusJenisSurat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel18">
-                    Hapus Jenis Surat
-                </h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                Apakah Kamu yakin ingin menghapus Jenis Surat ini
-            </div>
-            <form action="" method="post">
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Tutup</span>
-                    </button>
-                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Hapus</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+
 
 
 @endsection

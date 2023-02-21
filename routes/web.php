@@ -34,20 +34,20 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
-    Route::post('/store/pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
+    Route::post('/pengguna/store', [PenggunaController::class, 'store'])->name('pengguna-store');
 
     //Jenis Surat
     Route::get('/jenis-surat', [JenisSuratController::class, 'index'])->name('jenis-surat');
-    Route::post('/store/jenis-surat', [JenisSuratController::class, 'store'])->name('store-jenis-surat');
-    Route::delete('/jenis-surat/{id}/destroy', [JenisSuratController::class, 'destroy'])->name('destroy-jenis-surat');
+    Route::post('/jenis-surat/store', [JenisSuratController::class, 'store'])->name('jenis-surat-store');
+    Route::delete('/jenis-surat/destroy/{id}', [JenisSuratController::class, 'destroy'])->name('jenis-surat-destroy');
 
     //Sub Bidang
     Route::get('/sub-bidang', [SubBidangController::class, 'index'])->name('sub-bidang');
-    Route::post('/store/sub-bidang', [SubBidangController::class, 'store'])->name('store_sub-bidang');
-    Route::delete('/sub-bidang/{id}/destroy', [SubBidangController::class, 'destroy'])->name('destroy_sub-bidang');
+    Route::post('/sub-bidang/store', [SubBidangController::class, 'store'])->name('sub-bidang-store');
+    Route::delete('/sub-bidang/destroy/{id}', [SubBidangController::class, 'destroy'])->name('sub-bidang-destroy');
 
     //Bidang
     Route::get('/bidang', [BidangController::class, 'index'])->name('bidang');
-    Route::post('/store/bidang', [BidangController::class, 'store'])->name('store_bidang');
-    Route::delete('/bidang/{id}/destroy', [BidangController::class, 'destroy'])->name('destroy_bidang');
+    Route::post('/bidang/store', [BidangController::class, 'store'])->name('bidang-store');
+    Route::delete('/bidang/destroy/{id}', [BidangController::class, 'destroy'])->name('bidang-destroy');
 });

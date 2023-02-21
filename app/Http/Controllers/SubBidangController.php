@@ -17,7 +17,7 @@ class SubBidangController extends Controller
         //
         $title = 'Sub Bidang';
         $data = SubBidang::all();
-        return view("subbidang.index", compact(['data', 'title']));
+        return view("sub-bidang.index", compact(['data', 'title']));
     }
 
     /**
