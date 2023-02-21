@@ -12,6 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+        UserSeeder::class,
+        BidangSeeder::class,
+        JenisSuratSeeder::class,
+        SubBidangSeeder::class
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
