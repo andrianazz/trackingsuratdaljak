@@ -16,7 +16,7 @@ class JenisSuratController extends Controller
     {
         $title = 'Jenis Surat';
         $data = JenisSurat::all();
-        return view("jenissurat.index", compact(['data', 'title']));
+        return view("jenis-surat.index", compact(['data', 'title']));
     }
 
     /**
@@ -34,7 +34,7 @@ class JenisSuratController extends Controller
     public function store(Request $request)
     {
         JenisSurat::create($request->all());
-        return redirect()->route('jenissurat');
+        return redirect()->route('jenis-surat');
     }
 
     /**
@@ -69,6 +69,6 @@ class JenisSuratController extends Controller
         $data = JenisSurat::find($id);
         $data->delete();
 
-        return redirect()->route('jenissurat');
+        return redirect()->route('jenis-surat');
     }
 }

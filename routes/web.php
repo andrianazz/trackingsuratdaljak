@@ -31,14 +31,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
 
     //Jenis Surat
-    Route::get('/jenissurat', [JenisSuratController::class, 'index'])->name('jenissurat');
-    Route::post('/store/jenissurat', [JenisSuratController::class, 'store'])->name('store_jenissurat');
-    Route::delete('/jenis-surat/destroy/{id}', [JenisSuratController::class, 'destroy'])->name('destroy_jenissurat');
+    Route::get('/jenis-surat', [JenisSuratController::class, 'index'])->name('jenis-surat');
+    Route::post('/jenis-surat/store', [JenisSuratController::class, 'store'])->name('jenis-surat-store');
+    Route::delete('/jenis-surat/destroy/{id}', [JenisSuratController::class, 'destroy'])->name('jenis-surat-destroy');
 
     //Sub Bidang
-    Route::get('/subbidang', [SubBidangController::class, 'index'])->name('subbidang');
+    Route::get('/sub-bidang', [SubBidangController::class, 'index'])->name('sub-bidang');
 
     //Bidang
     Route::get('/bidang', [BidangController::class, 'index'])->name('bidang');
-    Route::post('/store/bidang', [BidangController::class, 'store'])->name('store_bidang');
+    Route::post('/store/bidang', [BidangController::class, 'store'])->name('bidang-store');
 });

@@ -15,7 +15,7 @@ class SubBidangController extends Controller
     public function index()
     {
         //
-        return view("subbidang.index");
+        return view("sub-bidang.index");
     }
 
     /**

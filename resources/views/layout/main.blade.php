@@ -68,10 +68,10 @@
                                     <a href="/bidang">Bidang</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="/subbidang">Sub Bidang</a>
+                                    <a href="/sub-bidang">Sub Bidang</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="/jenissurat">Jenis Surat</a>
+                                    <a href="/jenis-surat">Jenis Surat</a>
                                 </li>
                                 <li class="submenu-item">
                                     <a href="/pengguna">Pengguna</a>
