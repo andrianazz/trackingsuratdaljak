@@ -52,26 +52,26 @@
                         <tr>
                             <td>{{ $no++}}</td>
                             <td>{{ $row->jenis_surat }}</td>
-                            <td>
+                            <td class="text-end">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenisSurat">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusJenisSurat">
+                                <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#hapusJenisSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
-                                <div class="modal fade text-left" id="hapusJenisSurat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+                                <div class="modal fade text-left" id="hapusJenisSurat{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel{{$row->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel18">
+                                                <h4 class="modal-title" id="myModalLabel{{$row->id}}">
                                                     Hapus Jenis Surat
                                                 </h4>
                                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                                     <i data-feather="x"></i>
                                                 </button>
                                             </div>
-                                            <div class="modal-body">
-                                                Apakah anda yakin ingin menghapus jenis surat ini?
+                                            <div class="modal-body text-center">
+                                                Apakah anda yakin ingin menghapus {{$row->jenis_surat}}?
                                             </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">

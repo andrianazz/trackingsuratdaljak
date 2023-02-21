@@ -41,9 +41,41 @@
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPengguna">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusPengguna{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
+
+                                <div class="modal fade text-left" id="hapusPengguna{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel{{$row->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel{{$row->id}}">
+                                                    Hapus Sub Bidang
+                                                </h4>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                Apakah anda yakin ingin menghapus {{$row->nama_user}}?
+                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Tutup</span>
+                                                    </button>
+                                                    <form action="/sub-bidang/destroy/{{ $row->id }}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Hapus</span>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
@@ -54,11 +86,11 @@
     </section>
 </div>
 
-<div class="modal fade text-left" id="large" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
+<div class="modal fade text-left" id="large" tabindex="-1" role="dialog" aria-labelledby="myModalLabelTambah" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel17">
+                <h4 class="modal-title" id="myModalLabelTambah">
                     TAMBAH PENGGUNA
                 </h4>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -124,35 +156,6 @@
                     </button>
                 </div>
             </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade text-left" id="hapusPengguna" tabindex="-1" role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel18">
-                    Hapus Pengguna
-                </h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                Apakah Kamu yakin ingin menghapus pengguna ini
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                    <i class="bx bx-x d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Tutup</span>
-                </button>
-                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                    <i class="bx bx-check d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Hapus</span>
-                </button>
-            </div>
         </div>
     </div>
 </div>
