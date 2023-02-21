@@ -71,7 +71,7 @@
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <form action="/store/pengguna" method="POST">
+            <form action="/input-surat/store" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="row justify-content-center align-items-center mb-2">

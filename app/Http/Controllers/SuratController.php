@@ -24,7 +24,7 @@ class SuratController extends Controller
         $subBidang = SubBidang::all();
         $jenisSurat = JenisSurat::all();
 
-        return view('inputsurat.index', compact(['title', 'data', 'bidang', 'subBidang', 'jenisSurat']));
+        return view('input-surat.index', compact(['title', 'data', 'bidang', 'subBidang', 'jenisSurat']));
     }
 
     /**
