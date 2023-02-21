@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidang;
+use App\Models\JenisSurat;
+use App\Models\SubBidang;
 use App\Models\Surat;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -15,6 +18,13 @@ class SuratController extends Controller
     public function index()
     {
         //
+        $title = "Input Surat";
+        $data = Surat::all();
+        $bidang = Bidang::all();
+        $subBidang = SubBidang::all();
+        $jenisSurat = JenisSurat::all();
+
+        return view('inputsurat.index', compact(['title', 'data', 'bidang', 'subBidang', 'jenisSurat']));
     }
 
     /**

@@ -20,7 +20,7 @@ class PenggunaController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+
         if ($request->password == $request->password2) {
             User::create([
                 'id_pegawai' => $request->id_pegawai,

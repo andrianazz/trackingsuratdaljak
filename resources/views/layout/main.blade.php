@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/" class='sidebar-link'>
+                            <a href="/input-surat" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-richtext-fill"></i>
                                 <span>Input Surat</span>
                             </a>
