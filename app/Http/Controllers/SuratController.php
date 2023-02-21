@@ -76,10 +76,10 @@ class SuratController extends Controller
     public function suratSelesaiSubbidUpdate(Request $request, $id)
     {
         $tgl_selesai = new DateTime("now", new DateTimeZone('Asia/Jakarta'));
-        $tgl_selesai = date_format($tgl_selesai,'Y-m-d H:i:00');
+        $tgl_selesai = date_format($tgl_selesai, 'Y-m-d H:i:00');
 
         Surat::where('id', $id)->update([
-            'status_surat' => 5,
+            'status_surat' => 6,
             'tgl_selesai' => $tgl_selesai,
         ]);
         return redirect()->route('surat-selesai-subbid');
@@ -100,7 +100,7 @@ class SuratController extends Controller
     {
 
         $tgl_masuk = new DateTime($request->tgl_masuk, new DateTimeZone('Asia/Jakarta'));
-        $tgl_masuk = date_format($tgl_masuk,"Y-m-d H:i:00");
+        $tgl_masuk = date_format($tgl_masuk, "Y-m-d H:i:00");
         Surat::create(
             [
                 'indeks_surat' => $request->indeks_surat,
