@@ -59,7 +59,9 @@ class BidangController extends Controller
      */
     public function update(Request $request, Bidang $bidang)
     {
-        //
+        Bidang::where('id', $request->id)
+            ->update(['nama_bidang' => $request->nama_bidang]);
+        return redirect()->route('bidang');
     }
 
     /**

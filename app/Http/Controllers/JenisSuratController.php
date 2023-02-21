@@ -58,7 +58,9 @@ class JenisSuratController extends Controller
      */
     public function update(Request $request, JenisSurat $jenisSurat)
     {
-        //
+        JenisSurat::where('id', $request->id)
+            ->update(['jenis_surat' => $request->jenis_surat]);
+        return redirect()->route('jenis-surat');
     }
 
     /**
