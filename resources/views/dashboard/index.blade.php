@@ -36,6 +36,61 @@
                         </div>
                     </div>
                 </div>
+
+                @foreach($data as $row)
+                <div class="card mb-3 p-3">
+                    <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Surat</span><span class="text-medium"> {{ $row->indeks_surat }}</span></div>
+                    <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2 bg-secondary">
+                        <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Nama Pemohon:</span> {{$row->nama_pemohon}}</div>
+                        <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Disposisi dari:</span> {{ $row->bidang->nama_bidang }}</div>
+                        <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Disposisi ke:</span> {{ $row->subBidang->nama_sub_bidang }}</div>
+                        <div class="w-100 text-light text-center py-1 px-2"><span class="text-medium">Tanggal Masuk:</span> {{ $row->tgl_masuk }} </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
+                                <div class="step {{ $row->status_surat >= 1  ? 'completed': '' }} ">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-laptop"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Admin</h4>
+                                </div>
+                                <div class="step {{ $row->status_surat >= 2   ? 'completed': '' }}">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-person-fill"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Kabid</h4>
+                                </div>
+                                <div class="step {{ $row->status_surat >= 3 ? 'completed': '' }}">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-clock-history"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Proses Kasubid</h4>
+                                </div>
+                                <div class="step {{ $row->status_surat >= 4 ? 'completed': '' }}">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-file-earmark-richtext-fill"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Selesai Kasubid</h4>
+                                </div>
+                                <div class="step {{ $row->status_surat >= 5 ? 'completed': '' }}">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-person-check-fill"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Selesai Kabid</h4>
+                                </div>
+                                <div class="step {{ $row->status_surat >= 6 ? 'completed': '' }}">
+                                    <div class="step-icon-wrap">
+                                        <div class="step-icon"><i class="bi bi-file-check-fill"></i></div>
+                                    </div>
+                                    <h4 class="step-title">Selesai Admin</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

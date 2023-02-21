@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css" />
     <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-
+    <link rel="stylesheet" href="/assets/css/style2.css">
     <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
 
