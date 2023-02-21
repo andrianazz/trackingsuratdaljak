@@ -88,7 +88,10 @@
                             Tanggal Masuk
                         </div>
                         <div class="col-md-9">
-                            <input type="datetime-local" name="tgl_masuk" value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" required>
+                            @php
+                            date_default_timezone_set('Asia/Jakarta')
+                            @endphp
+                            <input type="datetime-local" name="tgl_masuk" value="{{ date('Y-m-d H:i:00') }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" required>
                         </div>
                     </div>
                     <div class="row justify-content-center ">
