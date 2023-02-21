@@ -34,7 +34,7 @@ class JenisSuratController extends Controller
     public function store(Request $request)
     {
         JenisSurat::create($request->all());
-        return redirect()->route('jenissurat');
+        return redirect()->route('jenis-surat');
     }
 
     /**
@@ -70,6 +70,6 @@ class JenisSuratController extends Controller
         $data = JenisSurat::find($id);
         $data->delete();
 
-        return redirect()->route('jenissurat');
+        return redirect()->route('jenis-surat');
     }
 }

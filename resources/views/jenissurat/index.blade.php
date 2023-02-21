@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="/store/jenissurat" method="post">
+                    <form action="/store/jenis-surat" method="post">
                         @csrf
                         <div class="col-md-7">
                             <div class="form-group has-icon-left">
@@ -84,7 +84,7 @@
             <div class="modal-body">
                 Apakah Kamu yakin ingin menghapus Jenis Surat ini
             </div>
-            <form action="/destroy/jenissurat/{{ $row->id }}" method="post">
+            <form action="" method="post">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
                         <i class="bx bx-x d-block d-sm-none"></i>

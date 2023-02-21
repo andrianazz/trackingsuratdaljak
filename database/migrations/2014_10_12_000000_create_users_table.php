@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('ip_address')->nullable();
             $table->enum('status_user', ['aktif', 'tidak_aktif']);
             $table->string('foto')->nullable();
-            $table->enum('role', ['admin', 'user']);
+            $table->string('role');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -15,7 +15,9 @@ class SubBidangController extends Controller
     public function index()
     {
         //
-        return view("subbidang.index");
+        $title = 'Sub Bidang';
+        $data = SubBidang::all();
+        return view("subbidang.index", compact(['data', 'title']));
     }
 
     /**
@@ -32,6 +34,8 @@ class SubBidangController extends Controller
     public function store(Request $request)
     {
         //
+        SubBidang::create($request->all());
+        return redirect()->route('sub-bidang');
     }
 
     /**
@@ -61,8 +65,12 @@ class SubBidangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SubBidang $subBidang)
+    public function destroy($id)
     {
         //
+        $data = SubBidang::find($id);
+        $data->delete();
+
+        return redirect()->route('sub-bidang');
     }
 }

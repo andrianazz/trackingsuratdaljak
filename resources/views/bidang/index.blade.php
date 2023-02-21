@@ -39,9 +39,9 @@
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
-                            <th>No. </th>
-                            <th>Bidang</th>
-                            <th>Aksi</th>
+                            <th style="width:5%">No. </th>
+                            <th style="width:70%">Bidang</th>
+                            <th style="width:25%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +52,7 @@
                         <tr>
                             <td>{{ $no++}}</td>
                             <td>{{ $row->nama_bidang }}</td>
-                            <td>
+                            <td class="text-end">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenisSurat">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>

@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'ip_address' => null,
             'status_user' => 'aktif',
             'foto' => null,
-            'role' => 'admin'
+            'role' => 'master'
         ]);
     }
 }
