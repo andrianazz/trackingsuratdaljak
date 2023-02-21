@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="/store/bidang" method="POST">
+                    <form action="/bidang/store" method="POST">
                         @csrf
                         <div class="col-md-8">
                             <div class="form-group has-icon-left">
