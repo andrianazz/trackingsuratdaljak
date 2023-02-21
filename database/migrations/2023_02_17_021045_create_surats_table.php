@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('surats', function (Blueprint $table) {
             $table->id();
-            $table->string("no");
             $table->string("indeks_surat");
             $table->timestamp("tgl_masuk");
+            $table->timestamp("tgl_selesai")->nullable();
             $table->foreignId('bidang_id');
             $table->string("nama_pemohon");
             $table->foreignId("jenis_surat_id");
             $table->foreignId("sub_bidang_id");
             $table->timestamp("tgl_selesai")->nullable();
             $table->integer("status_surat");
-            $table->string("catatan");
+            $table->string("catatan")->nullable();
             $table->timestamps();
         });
     }

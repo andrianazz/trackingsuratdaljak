@@ -10,19 +10,19 @@ class Surat extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $with = ['bidang', 'jenissurat', 'subbidang'];
+    protected $with = ['bidang', 'jenisSurat', 'subBidang'];
 
     public function bidang()
     {
         return $this->belongsTo(Bidang::class);
     }
 
-    public function jenissurat()
+    public function jenisSurat()
     {
         return $this->belongsTo(JenisSurat::class);
     }
 
-    public function subbidang()
+    public function subBidang()
     {
         return $this->belongsTo(SubBidang::class);
     }
