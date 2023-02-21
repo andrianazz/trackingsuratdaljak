@@ -26,6 +26,7 @@ Route::post('login/auth', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
+    // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     //Input Surat
@@ -46,9 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     //Surat Selesai Subbid
     Route::get('/surat-selesai-subbid', [SuratController::class, 'suratSelesaiSubbid'])->name('surat-selesai-subbid');
     Route::put('/surat-selesai-subbid/{id}', [SuratController::class, 'suratSelesaiSubbidUpdate'])->name('surat-selesai-subbid-update');
-
-
-
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');

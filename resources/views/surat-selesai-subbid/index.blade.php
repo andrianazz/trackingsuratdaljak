@@ -42,7 +42,8 @@
                                 <form action="/surat-selesai-subbid/{{ $row->id }}" method="post">
                                     @method('PUT')
                                     @csrf
-                                    <input type="date" value="{{ date('Y-m-d') }}" name="tgl_selesai" hidden>
+                                    <input type="date" value="{{ date('Y-m-d') }}" name="date" hidden>
+                                    <input type="time" value="{{ date('H:m:s') }}" name="time" hidden>
                                     <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
                                         <i class="fa  fa-edit"></i>Verifikasi
                                     </button>
