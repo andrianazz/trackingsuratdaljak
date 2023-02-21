@@ -27,6 +27,13 @@ class SuratController extends Controller
         return view('input-surat.index', compact(['title', 'data', 'bidang', 'subBidang', 'jenisSurat']));
     }
 
+    public function disposisiSelesai()
+    {
+        $title = "Disposisi Selesai";
+        $data = Surat::where('status_surat', 5)->get();
+        return view('disposisi-selesai.index', compact(['title', 'data']));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -62,6 +69,7 @@ class SuratController extends Controller
     public function show(Surat $surat)
     {
         //
+
     }
 
     /**

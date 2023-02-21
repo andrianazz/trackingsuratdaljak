@@ -32,6 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');
     Route::post('/input-surat/store', [SuratController::class, 'store'])->name('input-surat-store');
 
+    //Disposisi Selesai
+    Route::get('/disposisi-selesai', [SuratController::class, 'disposisiSelesai'])->name('disposisi-selesai');
+
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');

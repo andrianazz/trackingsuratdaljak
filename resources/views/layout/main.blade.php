@@ -53,7 +53,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/" class='sidebar-link'>
+                            <a href="/disposisi-selesai" class='sidebar-link'>
                                 <i class="bi bi-clipboard-data"></i>
                                 <span>Disposisi Selesai</span>
                             </a>

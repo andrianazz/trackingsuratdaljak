@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("indeks_surat");
             $table->timestamp("tgl_masuk");
+            $table->timestamp("tgl_selesai")->nullable();
             $table->foreignId('bidang_id');
             $table->string("nama_pemohon");
             $table->foreignId("jenis_surat_id");
