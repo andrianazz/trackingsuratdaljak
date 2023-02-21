@@ -32,8 +32,22 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');
     Route::post('/input-surat/store', [SuratController::class, 'store'])->name('input-surat-store');
 
+    //Disposisi Surat
+    Route::get('/disposisi-surat', [SuratController::class, 'disposisiSurat'])->name('disposisi-surat');
+    Route::put('/disposisi-surat/{id}', [SuratController::class, 'disposisiSuratUpdate'])->name('disposisi-surat-update');
+
     //Disposisi Selesai
     Route::get('/disposisi-selesai', [SuratController::class, 'disposisiSelesai'])->name('disposisi-selesai');
+
+    //Disposisi Subid
+    Route::get('/disposisi-surat-subbid', [SuratController::class, 'disposisiSuratSubbid'])->name('disposisi-surat-subbid');
+    Route::put('/disposisi-surat-subbid/{id}', [SuratController::class, 'disposisiSuratSubbidUpdate'])->name('disposisi-surat-subbid-update');
+
+    //Surat Selesai Subbid
+    Route::get('/surat-selesai-subbid', [SuratController::class, 'suratSelesaiSubbid'])->name('surat-selesai-subbid');
+    Route::put('/surat-selesai-subbid/{id}', [SuratController::class, 'suratSelesaiSubbidUpdate'])->name('surat-selesai-subbid-update');
+
+
 
 
     //Pengguna

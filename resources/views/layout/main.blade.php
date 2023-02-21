@@ -53,6 +53,30 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a href="/disposisi-surat" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Disposisi Surat (Kabid)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/disposisi-selesai" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Surat Selesai (Kabid)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/disposisi-surat-subbid" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Disposisi Surat (Subbid)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/surat-selesai-subbid" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Surat Selesai (Subbid)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="/disposisi-selesai" class='sidebar-link'>
                                 <i class="bi bi-clipboard-data"></i>
                                 <span>Disposisi Selesai</span>

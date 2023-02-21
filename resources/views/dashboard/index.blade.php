@@ -19,9 +19,12 @@
                                     @csrf
                                     <br>
                                     <div class="form-group text-center">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type="text" class="form-control" name="" placeholder="Masukkan Nama Pemohon / Nomor Surat" required>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-1">
+                                                Perihal :
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="text" class="form-control" name="" placeholder="Masukkan Nama Pemohon / Perihal Surat" required>
                                             </div>
                                             <div class="col-md-4">
                                                 <button type="submit" class="btn btn-block fw-bold text-dark text-uppercase bg-success text-white">LACAK</button>
