@@ -43,7 +43,6 @@ class SuratController extends Controller
 
         Surat::create(
             [
-                'no' => $request->no,
                 'indeks_surat' => $request->indeks_surat,
                 'tgl_masuk' => $request->tgl_masuk,
                 'bidang_id' => $request->bidang_id,

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('surats', function (Blueprint $table) {
             $table->id();
-            $table->string("no");
             $table->string("indeks_surat");
             $table->timestamp("tgl_masuk");
             $table->foreignId('bidang_id');

@@ -33,6 +33,7 @@
                     <tbody>
                         @php
                         $no = 1;
+
                         @endphp
                         @foreach ($data as $row )
                         <tr>
@@ -74,14 +75,6 @@
             <form action="/input-surat/store" method="POST">
                 @csrf
                 <div class="modal-body">
-                    <div class="row justify-content-center align-items-center mb-2">
-                        <div class="col-md-3">
-                            No
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="no" value="{{ $no }}" class="form-control" readonly>
-                        </div>
-                    </div>
                     <div class="row justify-content-center align-items-center mb-2">
                         <div class="col-md-3">
                             Indeks Surat
@@ -195,5 +188,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection
