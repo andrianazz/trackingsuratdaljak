@@ -2,6 +2,22 @@
 @section('content')
 
 <div class="page-heading">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            Jumlah Surat Disposisi
+                        </div>
+                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
+                            {{ count($data) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="section">
         <div class="card">
             <div class="card-header">

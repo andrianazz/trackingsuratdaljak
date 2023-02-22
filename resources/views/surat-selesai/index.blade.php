@@ -2,6 +2,36 @@
 @section('content')
 
 <div class="page-heading">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            Jumlah Surat Belum Selesai
+                        </div>
+                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
+                            {{ count($data->where('status_surat','!=' ,6)) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            Jumlah Surat Selesai
+                        </div>
+                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
+                            {{ count($data->where('status_surat', 6)) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="section">
         <div class="card">
             <div class="card-header">
