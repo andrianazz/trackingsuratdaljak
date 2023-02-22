@@ -48,6 +48,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/surat-selesai-subbid', [SuratController::class, 'suratSelesaiSubbid'])->name('surat-selesai-subbid');
     Route::put('/surat-selesai-subbid/{id}', [SuratController::class, 'suratSelesaiSubbidUpdate'])->name('surat-selesai-subbid-update');
 
+    //Surat Selesai Kabid
+    Route::get('/surat-selesai', [SuratController::class, 'suratSelesaiKabid'])->name('surat-selesai-kabid');
+    Route::get('/surat-selesai/{id}', [SuratController::class, 'suratSelesaiKabidUpdate'])->name('surat-selesai-kabid-update');
+
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
     Route::post('/pengguna/store', [PenggunaController::class, 'store'])->name('pengguna-store');

@@ -61,7 +61,7 @@ class SuratController extends Controller
     public function disposisiSuratSubbidUpdate(Request $request, $id)
     {
         Surat::where('id', $id)->update([
-            'status_surat' => 4,
+            'status_surat' => 3,
         ]);
         return redirect()->route('disposisi-surat-subbid');
     }
@@ -69,7 +69,7 @@ class SuratController extends Controller
     public function suratSelesaiSubbid()
     {
         $title = "Surat Selesai Subbid";
-        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 5)->orderBy('tgl_masuk', 'DESC')->get();
+        $data = Surat::where('status_surat', '>=', 3)->where('status_surat', '<=', 4)->orderBy('tgl_masuk', 'DESC')->get();
         return view('surat-selesai-subbid.index', compact(['title', 'data']));
     }
 
@@ -79,10 +79,26 @@ class SuratController extends Controller
         $tgl_selesai = date_format($tgl_selesai, 'Y-m-d H:i:00');
 
         Surat::where('id', $id)->update([
-            'status_surat' => 6,
+            'status_surat' => 4,
             'tgl_selesai' => $tgl_selesai,
         ]);
         return redirect()->route('surat-selesai-subbid');
+    }
+
+    public function suratSelesaiKabid()
+    {
+        $title = "Surat Selesai Kabid";
+        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 5)->orderBy('tgl_masuk', 'DESC')->get();
+        return view('surat-selesai.index', compact(['title', 'data']));
+    }
+
+    public function suratSelesaiKabidUpdate(Request $request, $id)
+    {
+        Surat::where('id', $id)->update([
+            'status_surat' => 6,
+
+        ]);
+        return redirect()->route('surat-selesai-kabid');
     }
 
     /**
