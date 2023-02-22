@@ -96,8 +96,8 @@
                                                                 <select class="choices form-select" name="role">
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
-                                                                    @foreach ($subbid as $row )
-                                                                    <option value="subbidang{{$row->id}}">{{ $row->nama_sub_bidang }}</option>
+                                                                    @foreach ($subbid as $sub )
+                                                                    <option value="subbidang{{$row->id}}">{{ $sub->nama_sub_bidang }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
