@@ -60,7 +60,7 @@
                                                 <div class="modal-body text-start">
                                                     <div class="row justify-content-center mb-2">
                                                         <div class="col-md-6">
-                                                            <b>ID Pegawai</b><input type="text" id="id" value="{{$row->id}}" class="form-control" name="id_pegawai" placeholder="Masukkan ID Pegawai...">
+                                                            <b>ID Pegawai</b><input type="text" id="id" value="{{$row->id_pegawai}}" class="form-control" name="id_pegawai" placeholder="Masukkan ID Pegawai...">
                                                         </div>
                                                         <div class="col-md-6 ">
                                                             <b>Nama Pegawai</b><input type="text" id="nama" value="{{$row->nama_user}}" class="form-control" name="nama_user" placeholder="Masukkan Nama Pegawai...">
@@ -96,8 +96,8 @@
                                                                 <select class="choices form-select" name="role">
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
-                                                                    @foreach ($subbid as $row )
-                                                                    <option value="subbidang{{$row->id}}">{{ $row->nama_sub_bidang }}</option>
+                                                                    @foreach ($subbid as $sub )
+                                                                    <option value="subbidang{{$sub->id}}">{{ $sub->nama_sub_bidang }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
@@ -118,6 +118,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusPengguna{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
@@ -127,7 +128,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title" id="myModalLabel{{$row->id}}">
-                                                    Hapus Sub Bidang
+                                                    Hapus Pengguna
                                                 </h4>
                                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                                     <i data-feather="x"></i>
