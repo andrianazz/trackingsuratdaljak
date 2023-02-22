@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -11,6 +12,9 @@ class LoginController extends Controller
 
     public function index()
     {
+        if (Auth::check()) {
+            return Redirect::back();
+        }
         return view('login.index');
     }
 
@@ -38,5 +42,10 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function authenticated(Request $request, $user)
+    {
+        Auth::logoutOtherDevices(request('password'));
     }
 }

@@ -177,8 +177,11 @@ class SuratController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Surat $surat)
+    public function destroy($id)
     {
-        //
+        $data = Surat::find($id);
+        $data->delete();
+
+        return redirect()->route('input-surat');
     }
 }

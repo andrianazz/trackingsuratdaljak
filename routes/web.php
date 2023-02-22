@@ -8,6 +8,7 @@ use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\SubBidangController;
 use App\Http\Controllers\SuratController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Session\Middleware\AuthenticateSession;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +26,14 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('login/auth', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::middleware(['auth','auth.session'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     //Input Surat
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');
     Route::post('/input-surat/store', [SuratController::class, 'store'])->name('input-surat-store');
+    Route::delete('/input-surat/{id}', [SuratController::class, 'destroy'])->name('input-surat-destroy');
 
     //Disposisi Surat
     Route::get('/disposisi-surat', [SuratController::class, 'disposisiSurat'])->name('disposisi-surat');
