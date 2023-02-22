@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    //
+    use AuthenticatesUsers;
 
     public function index()
     {
@@ -20,9 +22,8 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
         if (Auth::attempt($request->only(['username', 'password']))) {
-
+            Auth::logoutOtherDevices(request('password'));
             return redirect('/');
         }
         // $username = $request->user_id;
@@ -41,11 +42,13 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::flush();
+
         return redirect('/login');
     }
 
-    public function authenticated(Request $request, $user)
-    {
-        Auth::logoutOtherDevices(request('password'));
-    }
+    // public function authenticated(Request $request, $user)
+    // {
+    //     Auth::logoutOtherDevices(request('password'));
+    // }
 }

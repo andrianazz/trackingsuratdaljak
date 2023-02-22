@@ -8,7 +8,7 @@ use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\SubBidangController;
 use App\Http\Controllers\SuratController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Session\Middleware\AuthenticateSession;
+// use Illuminate\Session\Middleware\AuthenticateSession;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('login/auth', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth','auth.session'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/show', [DashboardController::class, 'show'])->name('show');
