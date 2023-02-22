@@ -88,7 +88,7 @@ class SuratController extends Controller
     public function suratSelesaiKabid()
     {
         $title = "Surat Selesai Kabid";
-        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 5)->orderBy('tgl_masuk', 'DESC')->get();
+        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 6)->orderBy('tgl_masuk', 'DESC')->get();
         return view('surat-selesai.index', compact(['title', 'data']));
     }
 

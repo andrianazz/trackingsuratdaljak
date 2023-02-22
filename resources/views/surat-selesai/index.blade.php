@@ -39,17 +39,15 @@
                             <td>{{ $row->tgl_selesai }}</td>
                             <td>
                                 @if($row->status_surat ==4)
-                                <form action="/surat-selesai-subbid/{{ $row->id }}" method="post">
+                                <form action="/surat-selesai/{{ $row->id }}" method="post">
                                     @method('PUT')
                                     @csrf
-                                    <input type="date" value="{{ date('Y-m-d') }}" name="date" hidden>
-                                    <input type="time" value="{{ date('H:m:s') }}" name="time" hidden>
                                     <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
                                         <i class="fa  fa-edit"></i>Verifikasi
                                     </button>
                                 </form>
                                 @endif
-                                @if($row->status_surat ==5)
+                                @if($row->status_surat ==6)
                                 Selesai
                                 @endif
                             </td>

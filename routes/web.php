@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Surat Selesai Kabid
     Route::get('/surat-selesai', [SuratController::class, 'suratSelesaiKabid'])->name('surat-selesai-kabid');
-    Route::get('/surat-selesai/{id}', [SuratController::class, 'suratSelesaiKabidUpdate'])->name('surat-selesai-kabid-update');
+    Route::put('/surat-selesai/{id}', [SuratController::class, 'suratSelesaiKabidUpdate'])->name('surat-selesai-kabid-update');
 
     //Pengguna
     Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
