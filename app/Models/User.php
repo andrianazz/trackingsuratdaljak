@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -48,4 +49,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function isRole($check_role)
+    {
+        if (Auth::user()->role === 'master') {
+            return true;
+        }else{
+            $user_roles = User::where([
+                ['id', '=' , Auth::user()->id],
+                ['role', 'LIKE', '%'.$check_role.'%']
+            ])->first();
+            return $user_roles ? true : false;
+        }
+    }
 }

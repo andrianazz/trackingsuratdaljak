@@ -11,9 +11,18 @@ use DateTimeZone;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class SuratController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['role:adminbidang'])->only('index', 'disposisiSelesai', 'store');
+        $this->middleware(['role:kabid'])->only('suratSelesaiKabid', 'suratSelesaiKabidUpdate', 'disposisiSurat', 'suratSelesaiKabidUpdate');
+        $this->middleware(['role:subbidang'])->only('disposisiSuratSubbid', 'suratSelesaiSubbid', 'suratSelesaiSubbidUpdate', 'suratSelesaiSubbidUpdate');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -31,7 +40,7 @@ class SuratController extends Controller
     public function disposisiSelesai()
     {
         $title = "Disposisi Selesai";
-        $data = Surat::where('status_surat', 5)->orderBy('tgl_selesai', 'DESC')->get();
+        $data = Surat::where('status_surat', 6)->orderBy('tgl_selesai', 'DESC')->get();
         return view('disposisi-selesai.index', compact(['title', 'data']));
     }
 
@@ -54,7 +63,11 @@ class SuratController extends Controller
     public function disposisiSuratSubbid()
     {
         $title = "Disposisi Surat Kasubid";
-        $data = Surat::where('status_surat', 2)->get();
+        $role = substr(Auth::user()->role, 9);
+
+        $data = Surat::where('status_surat', 2)
+            ->where('sub_bidang_id', $role)
+            ->get();
         return view('disposisi-surat-subbid.index', compact(['title', 'data']));
     }
 
@@ -69,7 +82,11 @@ class SuratController extends Controller
     public function suratSelesaiSubbid()
     {
         $title = "Surat Selesai Subbid";
-        $data = Surat::where('status_surat', '>=', 3)->where('status_surat', '<=', 4)->orderBy('tgl_masuk', 'DESC')->get();
+        $role = substr(Auth::user()->role, 9);
+
+        $data = Surat::where('status_surat', '>=', 3)
+            ->where('sub_bidang_id', $role)
+            ->where('status_surat', '<=', 4)->orderBy('tgl_masuk', 'DESC')->get();
         return view('surat-selesai-subbid.index', compact(['title', 'data']));
     }
 
