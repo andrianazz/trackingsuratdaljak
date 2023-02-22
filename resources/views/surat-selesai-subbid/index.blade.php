@@ -38,7 +38,7 @@
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>{{ $row->tgl_selesai }}</td>
                             <td>
-                                @if($row->status_surat ==4)
+                                @if($row->status_surat ==3)
                                 <form action="/surat-selesai-subbid/{{ $row->id }}" method="post">
                                     @method('PUT')
                                     @csrf
@@ -49,7 +49,7 @@
                                     </button>
                                 </form>
                                 @endif
-                                @if($row->status_surat ==5)
+                                @if($row->status_surat ==4)
                                 Selesai
                                 @endif
                             </td>

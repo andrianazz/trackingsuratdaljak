@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/disposisi-selesai" class='sidebar-link'>
+                            <a href="/surat-selesai" class='sidebar-link'>
                                 <i class="bi bi-clipboard-data"></i>
                                 <span>Surat Selesai (Kabid)</span>
                             </a>
