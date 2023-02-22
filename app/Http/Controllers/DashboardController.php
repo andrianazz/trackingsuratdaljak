@@ -14,4 +14,11 @@ class DashboardController extends Controller
         $data = Surat::orderBy('tgl_masuk', 'desc')->get();
         return view('dashboard.index', compact(['title', 'data']));
     }
+
+    public function show(Request $request)
+    {
+        $title = "Dashboard";
+        $data = Surat::where('indeks_surat', 'LIKE', '%' . $request->search . '%')->orWhere('nama_pemohon', 'LIKE', '%' . $request->search . '%')->get();
+        return view('dashboard.show', compact(['title', 'data']));
+    }
 }

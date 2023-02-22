@@ -55,8 +55,8 @@
                                             </div>
 
                                             <form action="/pengguna/{{$row->id}}" method="post">
-                                            @method('put')
-                                            @csrf
+                                                @method('put')
+                                                @csrf
                                                 <div class="modal-body text-start">
                                                     <div class="row justify-content-center mb-2">
                                                         <div class="col-md-6">
@@ -82,7 +82,7 @@
                                                             <b>Konfirmasi Password</b><input type="password" id="password-confirm" class="form-control" name="password2" placeholder="Masukkan Konfirmasi Password...">
                                                         </div>
                                                         <div style="color:red;">
-                                                                *Kosongkan jika tidak mengubah password
+                                                            *Kosongkan jika tidak mengubah password
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-center mb-2">
@@ -97,7 +97,7 @@
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
                                                                     @foreach ($subbid as $sub )
-                                                                    <option value="subbidang{{$sub->id}}">{{ $sub->nama_sub_bidang }}</option>
+                                                                    <option value="subbidang{{$row->id}}">{{ $sub->nama_sub_bidang }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
@@ -109,16 +109,15 @@
                                                         <i class="bx bx-x d-block d-sm-none"></i>
                                                         <span class="d-none d-sm-block">Tutup</span>
                                                     </button>
-                                                        <button class="btn btn-danger">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Ubah</span>
-                                                        </button>
+                                                    <button class="btn btn-danger">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Ubah</span>
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusPengguna{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
@@ -137,21 +136,21 @@
                                             <div class="modal-body text-center">
                                                 Apakah anda yakin ingin menghapus {{$row->nama_user}}?
                                             </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                                        <i class="bx bx-x d-block d-sm-none"></i>
-                                                        <span class="d-none d-sm-block">Tutup</span>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Tutup</span>
+                                                </button>
+                                                <form action="/pengguna/{{ $row->id }}" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Hapus</span>
                                                     </button>
-                                                    <form action="/pengguna/{{ $row->id }}" method="post">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="btn btn-danger">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Hapus</span>
-                                                        </button>
-                                                    </form>
-                                                </div>
+                                                </form>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </td>

@@ -29,6 +29,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['auth','auth.session'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/show', [DashboardController::class, 'show'])->name('show');
 
     //Input Surat
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');

@@ -2,6 +2,36 @@
 @section('content')
 
 <div class="page-heading">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            Jumlah Surat Disposisi
+                        </div>
+                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
+                            {{ count($data) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            Jumlah Surat Selesai
+                        </div>
+                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
+                            {{ count($data->where('status_surat', 3)) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="section">
         <div class="card">
             <div class="card-header">
@@ -37,9 +67,11 @@
                             <td>{{ $row->jenisSurat->jenis_surat }}</td>
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>
+
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#disposisi{{$row->id}}">
                                     <i class="fa  fa-plus"></i>Detail
                                 </button>
+
 
                                 <div class="modal fade text-left" id="disposisi{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="disposisi{{$row->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
