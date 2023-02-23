@@ -48,6 +48,7 @@
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSurat">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
+
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>
@@ -66,21 +67,21 @@
                                             <div class="modal-body text-center">
                                                 Apakah anda yakin ingin menghapus {{$row->indeks_surat}}?
                                             </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                                        <i class="bx bx-x d-block d-sm-none"></i>
-                                                        <span class="d-none d-sm-block">Tutup</span>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Tutup</span>
+                                                </button>
+                                                <form action="/input-surat/{{ $row->id }}" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Hapus</span>
                                                     </button>
-                                                    <form action="/input-surat/{{ $row->id }}" method="post">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="btn btn-danger">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Hapus</span>
-                                                        </button>
-                                                    </form>
-                                                </div>
+                                                </form>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </td>
@@ -194,5 +195,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

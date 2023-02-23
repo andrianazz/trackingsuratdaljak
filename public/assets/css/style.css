@@ -6,7 +6,8 @@ html {
 
 .bg {
     /* The image used */
-    background-image: url("../images/bg/bapenda.png");
+    /* background-image: url("../images/bg/bapenda.png"); */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg/bapenda.png");
     height: 100%;
     /* Center and scale the image nicely */
     background-position: center;
