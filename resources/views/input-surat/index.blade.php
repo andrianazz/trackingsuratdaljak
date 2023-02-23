@@ -45,9 +45,114 @@
                             <td>{{ $row->jenisSurat->jenis_surat }}</td>
                             <td>{{ $row->subBidang->nama_sub_bidang }}</td>
                             <td class="text-end">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSurat">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
+
+                                <div class="modal fade text-left" id="editSurat{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="editModal{{$row->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="editModal{{$row->id}}">
+                                                    Ubah Surat
+                                                </h4>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                </button>
+                                            </div>
+
+                                            <form action="/input-surat/{{$row->id}}" method="post">
+                                                @method('put')
+                                                @csrf
+                                                <div class="modal-body text-center">
+                                                    <div class="row justify-content-center align-items-center mb-2">
+                                                        <div class="col-md-3">
+                                                            Indeks Surat
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="indeks_surat" id="indeks_surat" class="form-control" placeholder="Masukkan Indeks Surat..." value="{{$row->indeks_surat}}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center mb-2">
+                                                        <div class="col-md-3">
+                                                            Tanggal Masuk
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            @php
+                                                            date_default_timezone_set('Asia/Jakarta')
+                                                            @endphp
+                                                            <input type="datetime-local" name="tgl_masuk" value="{{ date('Y-m-d H:i:00') }}" max="{{ date('Y-m-d') }}" id="fullname" value="{{$row->tgl_masuk}}" class="form-control" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center ">
+                                                        <div class="col-md-3">
+                                                            Disposisi Dari
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <select class="choices form-select" name="bidang_id" required>
+                                                                    <option value="">Pilih Bidang</option>
+                                                                    @foreach ($bidang as $bid)
+                                                                    <option value="{{ $bid->id }}">{{ $bid->nama_bidang }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center mb-3">
+                                                        <div class="col-md-3">
+                                                            Nama Pemohon
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="nama_pemohon" id="indeks_surat" class="form-control" placeholder="Masukkan Nama Pemohon..." value="{{$row->nama_pemohon}}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-3">
+                                                            Jenis Surat
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <select class="choices form-select" name="jenis_surat_id" required>
+                                                                    <option value="">Pilih Jenis Surat</option>
+                                                                    @foreach ($jenisSurat as $jenis)
+                                                                    <option value="{{ $jenis->id }}">{{ $jenis->jenis_surat }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-3">
+                                                            Disposisi Ke
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <select class="choices form-select" name="sub_bidang_id" required>
+                                                                    <option value="">Pilih Sub Bidang</option>
+                                                                    @foreach ($subBidang as $sub)
+                                                                    <option value="{{ $sub->id }}">{{ $sub->nama_sub_bidang }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Tutup</span>
+                                                    </button>
+                                                    <button class="btn btn-danger">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Ubah</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>

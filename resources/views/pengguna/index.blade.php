@@ -94,6 +94,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <select class="choices form-select" name="role">
+                                                                    <option value="">Pilih Role</option>
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
                                                                     @foreach ($subbid as $sub )
@@ -211,6 +212,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <select class="choices form-select" name="role">
+                                    <option value="">Pilih Role</option>
                                     <option value="kabid">Kepala Bidang</option>
                                     <option value="adminbidang">Admin Bidang</option>
                                     @foreach ($subbid as $row )
