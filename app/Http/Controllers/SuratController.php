@@ -171,7 +171,16 @@ class SuratController extends Controller
      */
     public function update(Request $request, Surat $surat)
     {
-        //
+        Surat::where('id', $request->id)
+            ->update([
+                'indeks_surat' => $request->indeks_surat,
+                'tgl_masuk' => $request->tgl_masuk,
+                'bidang_id' => $request->bidang_id,
+                'jenis_surat_id' => $request->jenis_surat_id,
+                'sub_bidang_id' => $request->sub_bidang_id,
+                'nama_pemohon' => $request->nama_pemohon,
+            ]);
+        return redirect()->route('input-surat');
     }
 
     /**

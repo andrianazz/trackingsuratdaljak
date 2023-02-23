@@ -45,10 +45,9 @@
                             <td>{{ $row->jenisSurat->jenis_surat }}</td>
                             <td>{{ $row->subBidang->nama_sub_bidang }}</td>
                             <td class="text-end">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSurat">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Ubah
                                 </button>
-
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusSurat{{$row->id}}">
                                     <i class="fa  fa-edit"></i>Hapus
                                 </button>

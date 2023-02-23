@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/input-surat', [SuratController::class, 'index'])->name('input-surat');
     Route::post('/input-surat/store', [SuratController::class, 'store'])->name('input-surat-store');
     Route::delete('/input-surat/{id}', [SuratController::class, 'destroy'])->name('input-surat-destroy');
+    Route::put('/input-surat/{id}', [SuratController::class, 'update'])->name('input-surat-update');
 
     //Disposisi Surat
     Route::get('/disposisi-surat', [SuratController::class, 'disposisiSurat'])->name('disposisi-surat');
