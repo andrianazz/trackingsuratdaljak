@@ -47,9 +47,6 @@
         </div>
     </section>
 </div>
-
-
-
 @endsection
 
 @push('css')

@@ -142,7 +142,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-end">
-                        <p>{{ \Carbon\Carbon::now()->year }} &copy; BAPENDA Kota Pekanbaru</p>
+                        <p>{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. STRATA DIGITAL</p>
                     </div>
 
                 </div>
