@@ -58,7 +58,8 @@
                         </div>
                     </form>
 
-                    <p class="text-grey mt-5 mb-0">2023 © Bapenda Kota Pekanbaru</p>
+                    <p class="text-grey mt-5 mb-0">{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. STRATA DIGITAL</p>
+
                 </div>
             </div>
         </div>
