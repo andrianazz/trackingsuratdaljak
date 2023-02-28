@@ -12,12 +12,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     @stack('css')
-     <link
-      rel="stylesheet"
-      href="assets/extensions/simple-datatables/style.css"
-    />
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css" />
     <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
 
+    <link rel="stylesheet" href="/assets/css/style2.css">
     <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
 
@@ -43,48 +41,79 @@
 
                         <div style="margin-top: 50px;"></div>
 
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item {{ Request::is('/')  ? 'active' : '' }}">
                             <a href="/" class='sidebar-link'>
-                                <i class="fa fa-home"></i>
+                                <i class="bi bi-house-door-fill"></i>
                                 <span>Beranda</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="/datacuti" class='sidebar-link'>
-                                <i class="fa fa-file"></i>
+                        @if(Auth::user()->role === 'adminbidang' || Auth::user()->role === 'master')
+                        <li class="sidebar-item {{ Request::is('input-surat')  ? 'active' : '' }}">
+                            <a href="/input-surat" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-richtext-fill"></i>
                                 <span>Input Surat</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="/kelolacuti" class='sidebar-link'>
-                                <i class="fa fa-clipboard-list"></i>
+                        <li class="sidebar-item {{ Request::is('disposisi-selesai')  ? 'active' : '' }}">
+                            <a href="/disposisi-selesai" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
                                 <span>Disposisi Selesai</span>
                             </a>
                         </li>
+                        @endif
+                        @if(Auth::user()->role === 'kabid' || Auth::user()->role === 'master')
+                        <li class="sidebar-item {{ Request::is('disposisi-surat')  ? 'active' : '' }}">
+                            <a href="/disposisi-surat" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Disposisi Surat {{ Auth::user()->role === 'master' ? '(Kabid)' : '' }}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ Request::is('surat-selesai')  ? 'active' : '' }}">
+                            <a href="/surat-selesai" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Surat Selesai {{ Auth::user()->role === 'master' ? '(Kabid)' : '' }}</span>
+                            </a>
+                        </li>
+                        @endif
+
+                        @if(str_contains(Auth::user()->role , 'subbidang') || Auth::user()->role === 'master')
+                        <li class="sidebar-item {{ Request::is('disposisi-surat-subbid')  ? 'active' : '' }}">
+                            <a href="/disposisi-surat-subbid" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Disposisi Surat {{ Auth::user()->role === 'master' ? '(Subbid)' : '' }}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ Request::is('surat-selesai-subbid')  ? 'active' : '' }}">
+                            <a href="/surat-selesai-subbid" class='sidebar-link'>
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Surat Selesai {{ Auth::user()->role === 'master' ? '(Subbid)' : '' }}</span>
+                            </a>
+                        </li>
+                        @endif
+
+                        @if( Auth::user()->role === 'master')
                         <li class="sidebar-item has-sub">
                             <a href="#" class="sidebar-link">
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-stack "></i>
                                 <span>Data Master</span>
                             </a>
                             <ul class="submenu" style="display: none;">
-                                <li class="submenu-item">
-                                    <a href="#">Bidang</a>
+                                <li class="submenu-item {{ Request::is('bidang')  ? 'active' : '' }}">
+                                    <a href="/bidang">Bidang</a>
                                 </li>
-                                <li class="submenu-item">
-                                    <a href="#">Sub Bidang</a>
+                                <li class="submenu-item {{ Request::is('sub-bidang')  ? 'active' : '' }}">
+                                    <a href="/sub-bidang">Sub Bidang</a>
                                 </li>
-                                <li class="submenu-item">
-                                    <a href="#">Sub Bidang</a>
+                                <li class="submenu-item {{ Request::is('jenis-surat')  ? 'active' : '' }}">
+                                    <a href="/jenis-surat">Jenis Surat</a>
                                 </li>
-                                <li class="submenu-item">
-                                    <a href="#">Jenis Surat</a>
-                                </li>
-                                <li class="submenu-item">
+                                <li class="submenu-item {{ Request::is('pengguna')  ? 'active' : '' }}">
                                     <a href="/pengguna">Pengguna</a>
                                 </li>
 
                             </ul>
                         </li>
+                        @endif
 
                     </ul>
                 </div>
@@ -103,7 +132,7 @@
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
                         <a style="float: right; cursor: pointer">
-                            <i class="fa fa-sign-out-alt" onclick="location.href='/logout'"></i>
+                            <i class="bi bi-box-arrow-right" onclick="location.href='/logout'"></i>
                         </a>
                     </div>
                 </div>
@@ -113,7 +142,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-end">
-                        <p>{{ \Carbon\Carbon::now()->year }} &copy; Badan Pendapatan Daerah</p>
+                        <p>{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. STRATA DIGITAL</p>
                     </div>
 
                 </div>
@@ -143,11 +172,15 @@
     @endif
 
 
+
+
     @stack('js')
 
     <script src="assets/js/app.js"></script>
     <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="assets/js/pages/simple-datatables.js"></script>
+
+
 </body>
 
 </html>

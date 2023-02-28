@@ -12,15 +12,18 @@ class BidangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
+        $title = 'Bidang';
+        $data = Bidang::all();
+        return view("bidang.index", compact(['title', 'data']));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,15 +31,17 @@ class BidangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
+        Bidang::create($request->all());
+        return redirect()->route('bidang');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Bidang $bidang): Response
+    public function show(Bidang $bidang)
     {
         //
     }
@@ -44,7 +49,7 @@ class BidangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bidang $bidang): Response
+    public function edit(Bidang $bidang)
     {
         //
     }
@@ -52,16 +57,22 @@ class BidangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Bidang $bidang): RedirectResponse
+    public function update(Request $request, Bidang $bidang)
     {
-        //
+        Bidang::where('id', $request->id)
+            ->update(['nama_bidang' => $request->nama_bidang]);
+        return redirect()->route('bidang');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bidang $bidang): RedirectResponse
+    public function destroy($id)
     {
         //
+        $data = Bidang::find($id);
+        $data->delete();
+
+        return redirect()->route('bidang');
     }
 }

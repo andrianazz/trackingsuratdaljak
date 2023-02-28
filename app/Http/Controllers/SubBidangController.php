@@ -12,15 +12,18 @@ class SubBidangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
+        $title = 'Sub Bidang';
+        $data = SubBidang::all();
+        return view("sub-bidang.index", compact(['data', 'title']));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,15 +31,17 @@ class SubBidangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
+        SubBidang::create($request->all());
+        return redirect()->route('sub-bidang');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(SubBidang $subBidang): Response
+    public function show(SubBidang $subBidang)
     {
         //
     }
@@ -44,7 +49,7 @@ class SubBidangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubBidang $subBidang): Response
+    public function edit(SubBidang $subBidang)
     {
         //
     }
@@ -52,16 +57,22 @@ class SubBidangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SubBidang $subBidang): RedirectResponse
+    public function update(Request $request, SubBidang $subBidang)
     {
-        //
+        SubBidang::where('id', $request->id)
+            ->update(['nama_sub_bidang' => $request->nama_sub_bidang]);
+        return redirect()->route('sub-bidang');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SubBidang $subBidang): RedirectResponse
+    public function destroy($id)
     {
         //
+        $data = SubBidang::find($id);
+        $data->delete();
+
+        return redirect()->route('sub-bidang');
     }
 }

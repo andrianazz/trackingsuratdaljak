@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('surats', function (Blueprint $table) {
             $table->id();
-            $table->string("no");
             $table->string("indeks_surat");
             $table->timestamp("tgl_masuk");
             $table->foreignId('bidang_id');
@@ -22,7 +21,7 @@ return new class extends Migration
             $table->foreignId("sub_bidang_id");
             $table->timestamp("tgl_selesai")->nullable();
             $table->integer("status_surat");
-            $table->string("catatan");
+            $table->string("catatan")->nullable();
             $table->timestamps();
         });
     }
