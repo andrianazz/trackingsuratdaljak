@@ -17,10 +17,10 @@ class UserSeeder extends Seeder
         //
         User::create([
             'id_pegawai' => '001',
-            'nama_user' => 'Andrian Wahyu',
-            'email_user' => 'andrianwahyu41@gmail.com',
-            'username' => 'andrianazz',
-            'password' => Hash::make('admin'),
+            'nama_user' => 'Master',
+            'email_user' => 'master@gmail.com',
+            'username' => 'master',
+            'password' => Hash::make('master'),
             'last_login' => null,
             'ip_address' => null,
             'status_user' => 'aktif',
