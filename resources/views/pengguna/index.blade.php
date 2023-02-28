@@ -1,6 +1,13 @@
 @extends('layout.main')
 
 @section('content')
+
+@foreach ($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+        <li>{{ $error }}</li>
+    </div>
+@endforeach
+
 <div class="page-heading">
     <section class="section">
         <div class="card">

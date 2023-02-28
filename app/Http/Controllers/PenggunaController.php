@@ -21,7 +21,13 @@ class PenggunaController extends Controller
     public function store(Request $request)
     {
 
-        if ($request->password == $request->password2) {
+        // if ($request->password == $request->password2) {
+        $this->validate($request, [
+            'id_pegawai' => 'unique:users',
+            'username' => 'unique:users|required|min:3|max:50',
+            'email' => 'email|unique:users|required',
+            'password' => 'required|confirmed|min:6',
+        ]);
             User::create([
                 'id_pegawai' => $request->id_pegawai,
                 'nama_user' => $request->nama_user,
@@ -32,9 +38,9 @@ class PenggunaController extends Controller
             ]);
 
             return redirect()->route('pengguna');
-        }
-
-        return redirect()->route('pengguna');
+        // }
+        //
+        // return redirect()->route('pengguna')->with('failed', 'Password tidak sama');
     }
 
     public function show(User $user)
