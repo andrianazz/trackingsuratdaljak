@@ -98,7 +98,7 @@
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
                                                                     @foreach ($subbid as $sub )
-                                                                    <option value="subbidang{{$row->id}}">{{ $sub->nama_sub_bidang }}</option>
+                                                                    <option value="subbidang{{$sub->id}}">{{ $sub->nama_sub_bidang }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>

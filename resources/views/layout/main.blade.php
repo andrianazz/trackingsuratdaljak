@@ -131,8 +131,9 @@
                 <div class="card">
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
-                        <a style="float: right; cursor: pointer">
-                            <i class="bi bi-box-arrow-right" onclick="location.href='/logout'"></i>
+                        <a style="cursor: pointer">
+                            <i style="float: right;" class="bi bi-box-arrow-right mx-4" onclick="location.href='/logout'"></i>
+                            <h4 style="float: right;"> {{ Auth::user()->nama_user }}</h4>
                         </a>
                     </div>
                 </div>

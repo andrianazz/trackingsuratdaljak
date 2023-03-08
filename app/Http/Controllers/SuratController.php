@@ -86,7 +86,7 @@ class SuratController extends Controller
 
         $data = Surat::where('status_surat', '>=', 3)
             ->where('sub_bidang_id', $role)
-            ->where('status_surat', '<=', 4)->orderBy('tgl_masuk', 'DESC')->get();
+            ->orderBy('tgl_masuk', 'DESC')->get();
         return view('surat-selesai-subbid.index', compact(['title', 'data']));
     }
 
