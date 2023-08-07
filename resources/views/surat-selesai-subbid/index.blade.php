@@ -25,7 +25,7 @@
                             Jumlah Surat Selesai
                         </div>
                         <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
-                            {{ count($data->where('status_surat', '=',4)) }}
+                            {{ count($data->where('status_surat', '>=',4)) }}
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                     </button>
                                 </form>
                                 @endif
-                                @if($row->status_surat ==4)
+                                @if($row->status_surat >=4)
                                 Selesai
                                 @endif
                             </td>

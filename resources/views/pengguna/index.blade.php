@@ -1,6 +1,15 @@
 @extends('layout.main')
 
+
+
 @section('content')
+
+@foreach ($errors->all() as $error)
+	<div class="alert alert-danger" role="alert">
+		<li>{{ $error }}</li>
+	</div>
+@endforeach
+
 <div class="page-heading">
     <section class="section">
         <div class="card">
@@ -79,7 +88,7 @@
                                                             <b>Password</b><input type="password" id="password" class="form-control" name="password" placeholder="Masukkan Password...">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <b>Konfirmasi Password</b><input type="password" id="password-confirm" class="form-control" name="password2" placeholder="Masukkan Konfirmasi Password...">
+                                                            <b>Konfirmasi Password</b><input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Masukkan Konfirmasi Password...">
                                                         </div>
                                                         <div style="color:red;">
                                                             *Kosongkan jika tidak mengubah password
@@ -98,7 +107,7 @@
                                                                     <option value="kabid">Kepala Bidang</option>
                                                                     <option value="adminbidang">Admin Bidang</option>
                                                                     @foreach ($subbid as $sub )
-                                                                    <option value="subbidang{{$row->id}}">{{ $sub->nama_sub_bidang }}</option>
+                                                                    <option value="subbidang{{$sub->id}}">{{ $sub->nama_sub_bidang }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
@@ -199,7 +208,7 @@
                             Password<input type="password" id="password" class="form-control" name="password" placeholder="Masukkan Password...">
                         </div>
                         <div class="col-md-6">
-                            Konfirmasi Password<input type="password" id="password-confirm" class="form-control" name="password2" placeholder="Masukkan Konfirmasi Password...">
+                            Konfirmasi Password<input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Masukkan Konfirmasi Password...">
                         </div>
                     </div>
                     <div class="row justify-content-center mb-2">

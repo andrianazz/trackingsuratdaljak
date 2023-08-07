@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="/assets/css/style2.css">
     <link rel="stylesheet" href="assets/css/main/app.css">
-    <link rel="shortcut icon" href="assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/ic_pekanbaru.png" style="width: 10%" type="image/x-icon">
 
 
 </head>
@@ -131,8 +131,9 @@
                 <div class="card">
                     <div class="card-header">
                         <b>APLIKASI TRACKING SURAT BIDANG PENGENDALIAN PAJAK</b>
-                        <a style="float: right; cursor: pointer">
-                            <i class="bi bi-box-arrow-right" onclick="location.href='/logout'"></i>
+                        <a style="cursor: pointer">
+                            <i style="float:right;" class="bi bi-box-arrow-right mx-4" onclick="location.href='/logout'"></i>
+			<h4 style="float:right;">{{Auth::user()->nama_user}}</h4>
                         </a>
                     </div>
                 </div>
@@ -142,7 +143,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-end">
-                        <p>{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. STRATA DIGITAL</p>
+                        <p>{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. DIGITAL STRATA FARIABEL</p>
                     </div>
 
                 </div>

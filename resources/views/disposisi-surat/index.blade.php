@@ -85,7 +85,7 @@
                                                             Tanggal Masuk
                                                         </div>
                                                         <div class="col-md-9">
-                                                            <input type="date" value="{{ $row->tgl_masuk }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" disabled>
+                                                            <input type="text" value="{{ $row->tgl_masuk }}" max="{{ date('Y-m-d') }}" class="form-control" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-center mb-2">

@@ -17,20 +17,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            Jumlah Surat Selesai
-                        </div>
-                        <div class="col-md-6 text-center font-extrabold" style="font-size: 24px;">
-                            {{ count($data->where('status_surat', 3)) }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <section class="section">
         <div class="card">
@@ -101,7 +87,7 @@
                                                             Tanggal Masuk
                                                         </div>
                                                         <div class="col-md-9">
-                                                            <input type="date" value="{{ $row->tgl_masuk }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" disabled>
+                                                            <input type="text" value="{{ $row->tgl_masuk }}" max="{{ date('Y-m-d') }}" id="fullname" class="form-control" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-center mb-2">

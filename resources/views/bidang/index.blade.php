@@ -16,7 +16,7 @@
                             <div class="col-md-9">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" name="nama_bidang" class="form-control" placeholder="Masukkan Nama Bidang..." id="first-name-icon">
+                                        <input required type="text" name="nama_bidang" class="form-control" placeholder="Masukkan Nama Bidang..." id="first-name-icon">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>

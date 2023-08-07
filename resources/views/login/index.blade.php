@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="shortcut icon" href="/assets/images/logo/ic_bapenda.png" style="width: 10%" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo/ic_pekanbaru.png" style="width: 100%" type="image/x-icon">
 </head>
 
 <body class="bg">
@@ -58,7 +58,7 @@
                         </div>
                     </form>
 
-                    <p class="text-grey mt-5 mb-0">{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. STRATA DIGITAL</p>
+                    <p class="text-grey mt-5 mb-0">{{ \Carbon\Carbon::now()->year }} &copy; Created and Developed by PT. DIGITAL STRATA FARIABEL</p>
 
                 </div>
             </div>

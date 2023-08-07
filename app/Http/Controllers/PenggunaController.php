@@ -21,7 +21,15 @@ class PenggunaController extends Controller
     public function store(Request $request)
     {
 
-        if ($request->password == $request->password2) {
+        //if ($request->password == $request->password2) {
+	    $this->validate($request, [
+		    'id_pegawai' => 'unique:users',
+		    'username' => 'unique:users|required|min:3|max:50',
+		    'email_user' => 'email|unique:users|required',
+		    'password' => 'required|confirmed|min:6',
+		    'role' => 'required'
+	    ]);
+
             User::create([
                 'id_pegawai' => $request->id_pegawai,
                 'nama_user' => $request->nama_user,
@@ -32,9 +40,8 @@ class PenggunaController extends Controller
             ]);
 
             return redirect()->route('pengguna');
-        }
-
-        return redirect()->route('pengguna');
+        //}
+        //return redirect()->route('pengguna');
     }
 
     public function show(User $user)
@@ -55,27 +62,37 @@ class PenggunaController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        if (isset($request->password)) {
-            User::where('id', $request->id)
-                ->update([
-                    'id_pegawai' => $request->id_pegawai,
-                    'nama_user' => $request->nama_user,
-                    'email_user' => $request->email_user,
-                    'username' => $request->username,
-                    'password' => Hash::make($request->password),
-                    'role' => $request->role,
-                ]);
-        }else{
-            User::where('id', $request->id)
-                ->update([
-                    'id_pegawai' => $request->id_pegawai,
-                    'nama_user' => $request->nama_user,
-                    'email_user' => $request->email_user,
-                    'username' => $request->username,
-                    'role' => $request->role,
-                ]);
-        }
-        return redirect()->route('pengguna');
+	    $this->validate($request, [
+		    'username' => 'required|min:3|max:50',
+		    'email_user' => 'email|required',
+		    'role' => 'required'
+	    ]);
+
+	    if (isset($request->password)) {
+		    $this->validate($request, [
+			    'password' => 'required|confirmed|min:6',
+		    ]);
+		    User::where('id', $request->id)
+			    ->update([
+				    'id_pegawai' => $request->id_pegawai,
+				    'nama_user' => $request->nama_user,
+				    'email_user' => $request->email_user,
+				    'username' => $request->username,
+				    'password' => Hash::make($request->password),
+				    'role' => $request->role,
+			    ]);
+	    }else{
+		    User::where('id', $request->id)
+			    ->update([
+				    'id_pegawai' => $request->id_pegawai,
+				    'nama_user' => $request->nama_user,
+				    'email_user' => $request->email_user,
+				    'username' => $request->username,
+				    'role' => $request->role,
+			    ]);
+	    }
+
+	    return redirect()->route('pengguna');
     }
 
     /**
