@@ -26,4 +26,9 @@ class Surat extends Model
     {
         return $this->belongsTo(SubBidang::class);
     }
+
+    public function verifikasiSurat()
+    {
+        return $this->hasOne(VerifikasiSurat::class);
+    }
 }

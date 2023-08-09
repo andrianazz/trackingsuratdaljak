@@ -6,6 +6,7 @@ use App\Models\Bidang;
 use App\Models\JenisSurat;
 use App\Models\SubBidang;
 use App\Models\Surat;
+use App\Models\VerifikasiSurat;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Http\RedirectResponse;
@@ -40,7 +41,10 @@ class SuratController extends Controller
     public function disposisiSelesai()
     {
         $title = "Disposisi Selesai";
-        $data = Surat::where('status_surat', 6)->orderBy('tgl_selesai', 'DESC')->get();
+
+        $data = Surat::with('verifikasiSurat')->where('status_surat', 6)->orderBy('tgl_selesai', 'DESC')->get();
+        // $data = Surat::where('status_surat', 6)->orderBy('tgl_selesai', 'DESC')->get();
+
         return view('disposisi-selesai.index', compact(['title', 'data']));
     }
 
@@ -99,13 +103,33 @@ class SuratController extends Controller
             'status_surat' => 4,
             'tgl_selesai' => $tgl_selesai,
         ]);
+
+        $request->validate([
+            'nomor_surat' => 'required',
+            'nama_wp' => 'required',
+            'npwpd' => 'required',
+            'hasil_surat' => 'required',
+            'tgl_selesai_surat' => 'required',
+        ]);
+
+        VerifikasiSurat::create([
+            'nomor_surat' => $request->nomor_surat,
+            'nama_wp' => $request->nama_wp,
+            'npwpd' => $request->npwpd,
+            'tgl_selesai_surat' => $tgl_selesai,
+            'hasil_surat' => $request->hasil_surat,
+            'surat_id' => $id,
+        ]);
+
         return redirect()->route('surat-selesai-subbid');
     }
 
     public function suratSelesaiKabid()
     {
         $title = "Surat Selesai Kabid";
-        $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 6)->orderBy('tgl_masuk', 'DESC')->get();
+        $data = Surat::with('verifikasiSurat')->where('status_surat', '>=', 4)->where('status_surat', '<=', 6)->orderBy('tgl_masuk', 'DESC')->get();
+        // $data = Surat::where('status_surat', '>=', 4)->where('status_surat', '<=', 6)->orderBy('tgl_masuk', 'DESC')->get();
+
         return view('surat-selesai.index', compact(['title', 'data']));
     }
 

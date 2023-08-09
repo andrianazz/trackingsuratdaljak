@@ -69,16 +69,147 @@
                             <td>{{ $row->tgl_selesai }}</td>
                             <td>
                                 @if($row->status_surat ==4)
-                                <form action="/surat-selesai/{{ $row->id }}" method="post">
-                                    @method('PUT')
-                                    @csrf
-                                    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#verifikasi{{$row->id}}">
                                         <i class="fa  fa-edit"></i>Verifikasi
                                     </button>
-                                </form>
+
+                                    <div class="modal fade text-left" id="verifikasi{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="verifikasi{{$row->id}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="verifikasi{{$row->id}}">
+                                                        Verifikasi Surat
+                                                    </h4>
+                                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                        <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+
+                                                    <form action="/surat-selesai/{{ $row->id }}" method="post">
+                                                    @method('PUT')
+                                                    @csrf
+
+                                                    <input type="date" value="{{ date('Y-m-d') }}" name="date" hidden>
+                                                    <input type="time" value="{{ date('H:m:s') }}" name="time" hidden>
+                                                    <div class="modal-body">
+                                                        <div class="row justify-content-center align-items-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Nomor Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->nomor_surat}}" name="nomor_surat" type="text" id="nomor_surat" class="form-control" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Nama WP
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->nama_wp}}" type="text" name="nama_wp" value=""  id="nama_wp" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                NPWPD
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->npwpd}}" name="npwpd" type="text" class="form-control" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Tanggal Selesai Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->tgl_selesai_surat}}" type="date" name="tgl_selesai_surat" class="form-control" value="" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-md-3">
+                                                                Hasil Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <textarea disabled name="hasil_surat" rows="5" cols="60%">{{$row->verifikasiSurat->hasil_surat}}</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="reset" class="btn btn-light-secondary">
+                                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Reset</span>
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary ml-1">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Proses</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endif
                                 @if($row->status_surat ==6)
-                                Selesai
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lihatSurat{{$row->id}}">
+                                        <i class="fa  fa-edit"></i>Selesai
+                                    </button>
+                                    <div class="modal fade text-left" id="lihatSurat{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="lihatSurat{{$row->id}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="verifikasi{{$row->id}}">
+                                                        Lihat Surat
+                                                    </h4>
+                                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                        <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+
+                                                    <div class="modal-body">
+                                                        <div class="row justify-content-center align-items-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Nomor Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->nomor_surat}}" name="nomor_surat" type="text" id="nomor_surat" class="form-control" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Nama WP
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->nama_wp}}" type="text" name="nama_wp" value=""  id="nama_wp" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                NPWPD
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->npwpd}}" name="npwpd" type="text" class="form-control" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="col-md-3">
+                                                                Tanggal Selesai Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabled value="{{$row->verifikasiSurat->tgl_selesai_surat}}" type="date" name="tgl_selesai_surat" class="form-control" value="" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-md-3">
+                                                                Hasil Surat
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <textarea disabled name="hasil_surat" rows="5" cols="60%">{{$row->verifikasiSurat->hasil_surat}}</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endif
                             </td>
                         </tr>
