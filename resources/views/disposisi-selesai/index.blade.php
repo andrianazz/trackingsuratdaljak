@@ -38,6 +38,7 @@
                             <td>{{ $row->tgl_masuk }}</td>
                             <td>{{ $row->tgl_selesai }}</td>
                             <td>
+                                    @if(!empty($row->verifikasiSurat->id))
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lihatSurat{{$row->id}}">
                                         <i class="fa  fa-edit"></i>Lihat Surat
                                     </button>
@@ -100,6 +101,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                @else
+                                    Selesai
+                                @endif
                             </td>
                         </tr>
                         @endforeach

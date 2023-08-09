@@ -149,6 +149,7 @@
                                     </div>
                                 @endif
                                 @if($row->status_surat ==6)
+                                    @if(!empty($row->verifikasiSurat->id))
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lihatSurat{{$row->id}}">
                                         <i class="fa  fa-edit"></i>Selesai
                                     </button>
@@ -210,6 +211,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @else
+                                        Selesai
+                                    @endif
                                 @endif
                             </td>
                         </tr>
