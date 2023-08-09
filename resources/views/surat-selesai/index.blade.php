@@ -69,6 +69,7 @@
                             <td>{{ $row->tgl_selesai }}</td>
                             <td>
                                 @if($row->status_surat ==4)
+                                    @if(!empty($row->verifikasiSurat->id))
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#verifikasi{{$row->id}}">
                                         <i class="fa  fa-edit"></i>Verifikasi
                                     </button>
@@ -147,6 +148,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @else
+                                        <form action="/surat-selesai/{{ $row->id }}" method="post">
+                                        @method('PUT')
+                                        @csrf
+                                        <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hapusPengguna">
+                                            <i class="fa  fa-edit"></i>Verifikasi
+                                        </button>
+                                        </form>
+                                    @endif
                                 @endif
                                 @if($row->status_surat ==6)
                                     @if(!empty($row->verifikasiSurat->id))
